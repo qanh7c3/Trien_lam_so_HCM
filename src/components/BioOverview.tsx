@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookMarked, HeartHandshake, Lightbulb, Users } from "lucide-react";
+import { BookMarked, HeartHandshake, Lightbulb, Users, Sparkles } from "lucide-react";
 
 export default function BioOverview() {
   const pillars = [
@@ -28,17 +28,18 @@ export default function BioOverview() {
   ];
 
   return (
-    <section id="bio" className="py-20 relative border-t border-[#D4AF37]/15">
+    <section id="bio" className="py-20 relative border-t border-[#D4AF37]/15 bg-[#12100E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#D4AF37] block mb-2">
-            Di sản Tinh thần Bất diệt
-          </span>
-          <h2 className="font-serif-title text-2xl sm:text-4xl font-bold text-[#FAF6F0]">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white text-[#12100E] border border-[#D4AF37] text-xs font-semibold mb-3 shadow-md">
+            <Sparkles className="w-3.5 h-3.5 text-[#8B1E19]" />
+            <span>Di Sản Tinh Thần Bất Diệt</span>
+          </div>
+          <h2 className="font-serif-title text-2xl sm:text-4xl font-bold text-white">
             Tiểu Sử Tổng Quan & Tư Tưởng Cốt Lõi
           </h2>
           <div className="w-20 h-0.5 bg-[#D4AF37] mx-auto mt-4 mb-6" />
-          <p className="text-[#EDE8DF]/80 text-sm sm:text-base leading-relaxed">
+          <p className="text-white/90 text-sm sm:text-base leading-relaxed font-sans">
             Chủ tịch Hồ Chí Minh (tên khai sinh Nguyễn Sinh Cung, thuở đi học mang tên Nguyễn Tất Thành) sinh ngày 19/5/1890 
             tại làng Hoàng Trù (quê ngoại) và lớn lên ở làng Sen (quê nội), xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An. 
             Người là hiện thân ngời sáng của tinh thần yêu nước quật cường, lòng nhân ái bao la và trí tuệ mẫn tiệp của dân tộc Việt Nam.
@@ -54,15 +55,15 @@ export default function BioOverview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-6 rounded-2xl bg-[#1C1917]/80 gold-border hover:border-[#D4AF37]/60 hover:shadow-lg transition-all group"
+              className="p-6 rounded-3xl bg-[#1C1917] gold-border hover:border-[#D4AF37] hover:shadow-xl transition-all group border border-white/10"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#24201D] flex items-center justify-center border border-[#D4AF37]/20 mb-4 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-2xl bg-[#24201D] flex items-center justify-center border border-white/10 mb-4 group-hover:scale-110 transition-transform">
                 {pillar.icon}
               </div>
-              <h3 className="font-serif-title text-lg font-bold text-[#F3E5AB] mb-2">
+              <h3 className="font-serif-title text-lg font-bold text-white mb-2 group-hover:text-[#F3E5AB] transition-colors">
                 {pillar.title}
               </h3>
-              <p className="text-xs sm:text-sm text-[#EDE8DF]/75 leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#EDE8DF]/80 leading-relaxed font-sans">
                 {pillar.desc}
               </p>
             </motion.div>

@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import CurtainReveal from "@/components/CurtainReveal";
 import BioOverview from "@/components/BioOverview";
 import RealPhotosGallery from "@/components/RealPhotosGallery";
 import FiveContinentsScrollytelling from "@/components/FiveContinentsScrollytelling";
@@ -20,6 +21,7 @@ export default async function HomePage() {
     <main className="min-h-screen flex flex-col bg-[#12100E] text-[#EDE8DF]">
       <Navbar />
       <HeroSection />
+      <CurtainReveal />
       <BioOverview />
       <RealPhotosGallery photos={photos} />
       <FiveContinentsScrollytelling journey={journey} />

@@ -12,6 +12,10 @@ export interface IFiveContinentsJourney {
   };
   activities: string;
   historical_significance: string;
+  alias?: string;
+  historical_address?: string;
+  key_document?: string;
+  historical_figures?: string;
   image_url: string;
   source_name: string;
   source_url: string;
@@ -31,6 +35,10 @@ const FiveContinentsJourneySchema = new Schema<IFiveContinentsJourney>(
     },
     activities: { type: String, required: true },
     historical_significance: { type: String, required: true },
+    alias: { type: String, required: false },
+    historical_address: { type: String, required: false },
+    key_document: { type: String, required: false },
+    historical_figures: { type: String, required: false },
     image_url: { type: String, required: true },
     source_name: { type: String, required: true },
     source_url: { type: String, required: true },

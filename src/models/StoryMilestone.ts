@@ -8,6 +8,8 @@ export interface IStoryMilestone {
   summary: string;
   full_story: string;
   lesson_or_quote: string;
+  historical_context?: string;
+  witness_or_teller?: string;
   image_url: string;
   source_name: string;
   source_url: string;
@@ -23,6 +25,8 @@ const StoryMilestoneSchema = new Schema<IStoryMilestone>(
     summary: { type: String, required: true },
     full_story: { type: String, required: true },
     lesson_or_quote: { type: String, required: true },
+    historical_context: { type: String, required: false },
+    witness_or_teller: { type: String, required: false },
     image_url: { type: String, required: true },
     source_name: { type: String, required: true },
     source_url: { type: String, required: true },

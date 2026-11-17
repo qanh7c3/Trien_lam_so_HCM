@@ -9,6 +9,8 @@ export interface IResistanceHistory {
   ho_chi_minh_role: string;
   authentic_quote: string;
   outcome: string;
+  directive_or_order?: string;
+  commander?: string;
   image_url: string;
   source_name: string;
   source_url: string;
@@ -29,6 +31,8 @@ const ResistanceHistorySchema = new Schema<IResistanceHistory>(
     ho_chi_minh_role: { type: String, required: true },
     authentic_quote: { type: String, required: true },
     outcome: { type: String, required: true },
+    directive_or_order: { type: String, required: false },
+    commander: { type: String, required: false },
     image_url: { type: String, required: true },
     source_name: { type: String, required: true },
     source_url: { type: String, required: true },

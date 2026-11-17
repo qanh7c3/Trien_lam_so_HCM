@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, BookOpen, Quote, ShieldCheck, ExternalLink, Bookmark } from "lucide-react";
+import { X, BookOpen, Quote, ShieldCheck, ExternalLink, Bookmark, Calendar } from "lucide-react";
 import { IStoryMilestone } from "@/models/StoryMilestone";
 
 interface StoryModalProps {
@@ -14,18 +15,18 @@ export default function StoryModal({ story, onClose }: StoryModalProps) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md">
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.96 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
-          className="relative max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-3xl book-paper p-6 sm:p-10 shadow-2xl border-2 border-[#D4AF37]/40 flex flex-col justify-between"
+          className="relative max-w-4xl w-full max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF8F5] text-[#1A1614] p-6 sm:p-10 shadow-2xl border-2 border-[#D4AF37]/50 flex flex-col justify-between"
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full bg-[#1C1917]/10 hover:bg-[#1C1917]/20 text-[#1A1614] transition-colors"
+            className="absolute top-5 right-5 p-2 rounded-full bg-black/10 hover:bg-black/20 text-[#1A1614] transition-colors z-20"
             aria-label="Đóng cuốn sách"
           >
             <X className="w-5 h-5" />
@@ -33,16 +34,16 @@ export default function StoryModal({ story, onClose }: StoryModalProps) {
 
           <div>
             {/* Header info */}
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="px-3 py-1 rounded-full bg-[#8B1E19] text-[#FAF6F0] text-xs font-serif font-bold">
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="px-3.5 py-1 rounded-full bg-[#8B1E19] text-white text-xs font-serif font-bold shadow-sm">
                 {story.date_label}
               </span>
-              <span className="text-xs font-sans text-[#8B1E19] font-semibold flex items-center gap-1">
+              <span className="text-xs font-sans text-[#8B1E19] font-bold flex items-center gap-1">
                 <Bookmark className="w-3.5 h-3.5" />
                 Thời kỳ {story.period}
               </span>
-              <span className="inline-flex items-center gap-1 text-xs text-emerald-800 ml-auto font-sans">
-                <ShieldCheck className="w-3.5 h-3.5" />
+              <span className="inline-flex items-center gap-1 text-xs text-emerald-800 ml-auto font-sans font-semibold">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
                 Tư liệu chuẩn xác 100%
               </span>
             </div>
@@ -52,24 +53,47 @@ export default function StoryModal({ story, onClose }: StoryModalProps) {
               {story.title}
             </h2>
 
-            {/* Full Story Content formatted with literary elegance */}
-            <div className="prose prose-stone max-w-none text-[#2C241E] text-base leading-relaxed space-y-4 mb-8 font-serif">
-              <p className="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-[#8B1E19] first-letter:leading-none">
-                {story.full_story}
-              </p>
-            </div>
-
-            {/* Authentic Quote Box */}
-            <div className="p-5 rounded-2xl bg-[#EDE4D5] border-l-4 border-[#8B1E19] shadow-inner mb-6">
-              <div className="flex items-start gap-3">
-                <Quote className="w-6 h-6 text-[#8B1E19] shrink-0 mt-1" />
-                <div>
-                  <div className="text-xs uppercase font-sans font-bold tracking-wider text-[#8B1E19] mb-1">
-                    Bài học & Lời dạy của Bác:
+            {/* Layout: Tall Archival Image + Full Story Text */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+              {/* Tall Image Frame */}
+              <div className="md:col-span-5 relative">
+                <div className="relative w-full h-[320px] md:h-[400px] rounded-2xl overflow-hidden border-2 border-[#D4AF37] shadow-lg bg-black">
+                  <Image
+                    src={story.image_url || "/images/archive/portrait-1946.jpg"}
+                    alt={story.title}
+                    fill
+                    className="object-cover object-top filter contrast-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 p-2 rounded-lg bg-black/70 backdrop-blur-sm text-center">
+                    <p className="text-[11px] text-white font-sans font-medium">
+                      Hình ảnh tư liệu lịch sử thời kỳ {story.period}
+                    </p>
                   </div>
-                  <p className="font-serif text-sm sm:text-base italic font-semibold text-[#1A1614] leading-relaxed">
-                    {story.lesson_or_quote}
+                </div>
+              </div>
+
+              {/* Story Content */}
+              <div className="md:col-span-7 flex flex-col justify-between">
+                <div className="text-[#2C241E] text-sm sm:text-base leading-relaxed space-y-4 font-serif">
+                  <p className="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-[#8B1E19] first-letter:leading-none">
+                    {story.full_story}
                   </p>
+                </div>
+
+                {/* Authentic Quote Box */}
+                <div className="mt-6 p-4 rounded-2xl bg-[#EDE4D5] border-l-4 border-[#8B1E19] shadow-inner">
+                  <div className="flex items-start gap-3">
+                    <Quote className="w-5 h-5 text-[#8B1E19] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-xs uppercase font-sans font-bold tracking-wider text-[#8B1E19] mb-1">
+                        Bài học & Lời dạy của Bác:
+                      </div>
+                      <p className="font-serif text-xs sm:text-sm italic font-semibold text-[#1A1614] leading-relaxed">
+                        {story.lesson_or_quote}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -88,7 +112,7 @@ export default function StoryModal({ story, onClose }: StoryModalProps) {
               className="inline-flex items-center gap-1 text-[#8B1E19] hover:underline font-bold"
             >
               <span>Xem tài liệu gốc</span>
-              <ExternalLink className="w-3 h-3" />
+              <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
         </motion.div>
