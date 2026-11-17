@@ -1,12 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Compass, Globe, MapPin, Calendar, ExternalLink, ChevronRight, CheckCircle2, Bookmark, UserCheck } from "lucide-react";
+import { Compass, Globe, MapPin, Calendar, ExternalLink, ChevronRight, CheckCircle2, Bookmark } from "lucide-react";
 import { IFiveContinentsJourney } from "@/models/FiveContinentsJourney";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface FiveContinentsProps {
   journey: IFiveContinentsJourney[];
@@ -14,41 +12,11 @@ interface FiveContinentsProps {
 
 export default function FiveContinentsScrollytelling({ journey }: FiveContinentsProps) {
   const [activeStep, setActiveStep] = useState<number>(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const mm = gsap.matchMedia();
-
-    mm.add("(min-width: 1024px)", () => {
-      const trigger = ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top 60%",
-        end: "bottom 30%",
-        onUpdate: (self) => {
-          const stepIndex = Math.min(
-            journey.length - 1,
-            Math.floor(self.progress * journey.length)
-          );
-          setActiveStep(stepIndex);
-        },
-      });
-
-      return () => {
-        trigger.kill();
-      };
-    });
-
-    return () => {
-      mm.revert();
-    };
-  }, [journey.length]);
 
   const currentStop = journey[activeStep] || journey[0];
 
   return (
-    <section id="journey" ref={containerRef} className="py-24 relative bg-[#12100E] border-t border-[#D4AF37]/15">
+    <section id="journey" className="py-24 relative bg-[#12100E] border-t border-[#D4AF37]/15">
       {/* Background ambient lighting */}
       <div className="absolute inset-0 pointer-events-none opacity-10">
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#D4AF37]/20 rounded-full blur-[140px]" />
@@ -59,7 +27,7 @@ export default function FiveContinentsScrollytelling({ journey }: FiveContinents
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#12100E] border border-[#D4AF37] text-xs font-semibold mb-3 shadow-md">
             <Compass className="w-3.5 h-3.5 text-[#8B1E19]" />
-            <span>Phân Khu II — Scrollytelling</span>
+            <span>Phân Khu II — Hành Trình Tìm Đường Cứu Nước</span>
           </div>
           <h2 className="font-serif-title text-2xl sm:text-4xl font-bold text-white">
             Hành Trình Bôn Ba 5 Châu (1911 – 1941)
@@ -74,47 +42,60 @@ export default function FiveContinentsScrollytelling({ journey }: FiveContinents
         {/* 3-Part Layout: Stepper List (left) + Detailed Card with Tall Image (right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Timeline Navigation List (left) */}
-          <div className="lg:col-span-4 flex flex-col gap-2.5 max-h-[720px] overflow-y-auto pr-2 custom-scrollbar">
-            {journey.map((item, idx) => {
-              const isActive = idx === activeStep;
-              return (
-                <button
-                  key={idx}
-                  onClick={() => setActiveStep(idx)}
-                  className={`text-left p-3.5 rounded-xl transition-all border flex items-center justify-between ${
-                    isActive
-                      ? "bg-white text-[#12100E] border-[#D4AF37] shadow-xl"
-                      : "bg-[#1C1917]/70 text-[#EDE8DF] border-white/5 hover:border-[#D4AF37]/40 hover:bg-[#1C1917]"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`w-7 h-7 rounded-full flex items-center justify-center font-serif text-xs font-bold shrink-0 ${
-                        isActive
-                          ? "red-lacquer-gradient text-white border border-[#D4AF37]"
-                          : "bg-[#24201D] text-[#EDE8DF]/70"
-                      }`}
-                    >
-                      {item.order}
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className={`text-xs font-semibold ${isActive ? "text-[#8B1E19]" : "text-[#F3E5AB]"}`}>
-                          {item.year_range}
-                        </span>
-                        <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${isActive ? "bg-[#EDE4D5] text-[#5C1410]" : "bg-black/40 text-[#D4AF37]"}`}>
-                          {item.continent}
-                        </span>
+          <div className="lg:col-span-4 flex flex-col">
+            <div className="flex items-center justify-between px-2 mb-2 text-xs text-[#F3E5AB]">
+              <span className="font-semibold uppercase tracking-wider text-[11px] text-[#C5A059]">
+                12 Chặng Lịch Sử (Cuộn bên trong)
+              </span>
+              <span className="text-[11px] bg-[#1C1917] px-2 py-0.5 rounded border border-white/10">
+                {activeStep + 1} / {journey.length}
+              </span>
+            </div>
+
+            {/* Scrollable list: only scrolls when cursor is inside (overscroll-contain) */}
+            <div className="flex flex-col gap-2.5 max-h-[640px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar p-1 rounded-2xl bg-[#171412]/60 border border-white/5">
+              {journey.map((item, idx) => {
+                const isActive = idx === activeStep;
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setActiveStep(idx)}
+                    className={`text-left p-3.5 rounded-xl transition-all border flex items-center justify-between cursor-pointer ${
+                      isActive
+                        ? "bg-white text-[#12100E] border-[#D4AF37] shadow-xl"
+                        : "bg-[#1C1917]/70 text-[#EDE8DF] border-white/5 hover:border-[#D4AF37]/40 hover:bg-[#1C1917]"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`w-7 h-7 rounded-full flex items-center justify-center font-serif text-xs font-bold shrink-0 ${
+                          isActive
+                            ? "red-lacquer-gradient text-white border border-[#D4AF37]"
+                            : "bg-[#24201D] text-[#EDE8DF]/70"
+                        }`}
+                      >
+                        {item.order}
                       </div>
-                      <div className={`font-serif-title text-sm font-bold mt-0.5 line-clamp-1 ${isActive ? "text-[#12100E]" : "text-white"}`}>
-                        {item.country} — {item.city}
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className={`text-xs font-semibold ${isActive ? "text-[#8B1E19]" : "text-[#F3E5AB]"}`}>
+                            {item.year_range}
+                          </span>
+                          <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${isActive ? "bg-[#EDE4D5] text-[#5C1410]" : "bg-black/40 text-[#D4AF37]"}`}>
+                            {item.continent}
+                          </span>
+                        </div>
+                        <div className={`font-serif-title text-sm font-bold mt-0.5 line-clamp-1 ${isActive ? "text-[#12100E]" : "text-white"}`}>
+                          {item.country} — {item.city}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <ChevronRight className={`w-4 h-4 shrink-0 transition-transform ${isActive ? "text-[#8B1E19] translate-x-1" : "text-[#EDE8DF]/30"}`} />
-                </button>
-              );
-            })}
+                    <ChevronRight className={`w-4 h-4 shrink-0 transition-transform ${isActive ? "text-[#8B1E19] translate-x-1" : "text-[#EDE8DF]/30"}`} />
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Detailed Presentation Card with Tall Historical Photo (right) */}
@@ -123,7 +104,7 @@ export default function FiveContinentsScrollytelling({ journey }: FiveContinents
               key={activeStep}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35 }}
+              transition={{ duration: 0.3 }}
               className="p-6 sm:p-8 rounded-3xl bg-[#1C1917] gold-border gold-glow-lg shadow-2xl relative overflow-hidden"
             >
               {/* Decorative watermarked globe */}
