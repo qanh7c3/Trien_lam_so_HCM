@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:backup": "tsx backup/export-database.ts",
+    "db:restore": "tsx backup/restore-database.ts"
   },
   "dependencies": {
     "framer-motion": "^14.14.0",
