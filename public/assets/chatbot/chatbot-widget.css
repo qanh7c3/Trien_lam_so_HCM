@@ -1,0 +1,306 @@
+:root {
+  --lf-primary: #8b1e19;
+  --lf-primary-hover: #a1231e;
+  --lf-bg: #ffffff;
+  --lf-surface: #f8fafc;
+  --lf-border: #e2e8f0;
+  --lf-text: #0f172a;
+  --lf-text-muted: #64748b;
+  --lf-bot-bubble: #f1f5f9;
+  --lf-user-bubble: #8b1e19;
+  --lf-user-text: #ffffff;
+  --lf-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lf-bg: #1c1917;
+    --lf-surface: #12100e;
+    --lf-border: #332d28;
+    --lf-text: #f5f5f4;
+    --lf-text-muted: #a8a29e;
+    --lf-bot-bubble: #26221f;
+    --lf-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.lf-dark {
+  --lf-bg: #1c1917;
+  --lf-surface: #12100e;
+  --lf-border: #332d28;
+  --lf-text: #f5f5f4;
+  --lf-text-muted: #a8a29e;
+  --lf-bot-bubble: #26221f;
+  --lf-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+.lf-light {
+  --lf-bg: #ffffff;
+  --lf-surface: #f8fafc;
+  --lf-border: #e2e8f0;
+  --lf-text: #0f172a;
+  --lf-text-muted: #64748b;
+  --lf-bot-bubble: #f1f5f9;
+  --lf-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.lf-widget-trigger {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--lf-primary);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(139, 30, 25, 0.4);
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s;
+  outline: none;
+}
+
+.lf-widget-trigger:hover {
+  transform: scale(1.06);
+  background: var(--lf-primary-hover);
+}
+
+.lf-widget-trigger:active {
+  transform: scale(0.96);
+}
+
+.lf-widget-trigger svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+.lf-widget-window {
+  position: fixed;
+  bottom: 92px;
+  right: 24px;
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  height: 560px;
+  max-height: calc(100vh - 120px);
+  background: var(--lf-bg);
+  border: 1px solid var(--lf-border);
+  border-radius: 20px;
+  box-shadow: var(--lf-shadow);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px) scale(0.96);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.lf-widget-window.lf-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.lf-widget-header {
+  padding: 16px 18px;
+  background: var(--lf-surface);
+  border-bottom: 1px solid var(--lf-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lf-widget-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lf-widget-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--lf-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.lf-widget-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--lf-text);
+  line-height: 1.2;
+}
+
+.lf-widget-status {
+  font-size: 11px;
+  color: var(--lf-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lf-widget-status::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.lf-widget-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lf-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--lf-text-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.lf-icon-btn:hover {
+  background: rgba(125, 125, 125, 0.12);
+  color: var(--lf-text);
+}
+
+.lf-widget-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--lf-bg);
+}
+
+.lf-message {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.lf-message-bot {
+  align-self: flex-start;
+  background: var(--lf-bot-bubble);
+  color: var(--lf-text);
+  border-bottom-left-radius: 4px;
+}
+
+.lf-message-user {
+  align-self: flex-end;
+  background: var(--lf-user-bubble);
+  color: var(--lf-user-text);
+  border-bottom-right-radius: 4px;
+}
+
+.lf-typing-indicator {
+  align-self: flex-start;
+  background: var(--lf-bot-bubble);
+  padding: 12px 16px;
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+  display: none;
+  align-items: center;
+  gap: 5px;
+}
+
+.lf-typing-indicator.lf-active {
+  display: flex;
+}
+
+.lf-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--lf-text-muted);
+  border-radius: 50%;
+  animation: lf-pulse 1.4s infinite ease-in-out both;
+}
+
+.lf-dot:nth-child(1) { animation-delay: -0.32s; }
+.lf-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes lf-pulse {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+.lf-widget-input-area {
+  padding: 12px 14px;
+  background: var(--lf-surface);
+  border-top: 1px solid var(--lf-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lf-widget-input {
+  flex: 1;
+  background: var(--lf-bg);
+  border: 1px solid var(--lf-border);
+  color: var(--lf-text);
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+  resize: none;
+  max-height: 100px;
+  min-height: 40px;
+  line-height: 1.4;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.lf-widget-input:focus {
+  border-color: var(--lf-primary);
+}
+
+.lf-widget-send {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--lf-primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.lf-widget-send:hover {
+  background: var(--lf-primary-hover);
+  transform: scale(1.05);
+}
+
+.lf-widget-send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}

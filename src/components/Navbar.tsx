@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { BookOpen, Compass, Image as ImageIcon, Shield, Menu, X, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { BookOpen, Compass, Image as ImageIcon, Shield, Menu, X, Sparkles, Box } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -70,25 +71,30 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Action Button */}
-        <div className="hidden lg:block">
+        <div className="flex items-center gap-2">
+          <Link
+            href="/3d"
+            className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#FAF6F0] bg-[#8B1E1E] hover:bg-[#a12424] border border-[#C5A059]/70 transition-all shadow-md"
+          >
+            <Box className="w-3.5 h-3.5 text-[#C5A059]" />
+            <span className="hidden sm:inline">Bản 3D Showcase</span>
+            <span className="sm:hidden">3D</span>
+          </Link>
           <a
             href="#journey"
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-[#12100E] bg-white hover:bg-[#FAF8F5] border border-[#D4AF37] transition-all shadow-md"
+            className="hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-[#12100E] bg-white hover:bg-[#FAF8F5] border border-[#D4AF37] transition-all shadow-md"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#8B1E19]" />
             <span>Vào Triển Lãm</span>
           </a>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-white hover:text-[#F3E5AB]"
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-white hover:text-[#F3E5AB]"
-          aria-label="Toggle Navigation Menu"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
       </div>
 
       {/* Mobile Drawer */}
@@ -126,6 +132,14 @@ export default function Navbar() {
             <Shield className="w-4 h-4 text-[#D4AF37]" />
             <span>Lịch sử Kháng chiến</span>
           </a>
+          <Link
+            href="/3d"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mt-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider text-[#FAF6F0] bg-[#8B1E1E] border border-[#C5A059]/60"
+          >
+            <Box className="w-4 h-4 text-[#C5A059]" />
+            <span>Chuyển sang Bản 3D Showcase</span>
+          </Link>
         </div>
       )}
     </header>

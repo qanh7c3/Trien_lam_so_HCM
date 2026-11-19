@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Compass, Globe, MapPin, Calendar, ExternalLink, ChevronRight, CheckCircle2, Bookmark } from "lucide-react";
 import { IFiveContinentsJourney } from "@/models/FiveContinentsJourney";
+import { useIsolatedScroll } from "@/hooks/useIsolatedScroll";
 
 interface FiveContinentsProps {
   journey: IFiveContinentsJourney[];
@@ -12,6 +13,7 @@ interface FiveContinentsProps {
 
 export default function FiveContinentsScrollytelling({ journey }: FiveContinentsProps) {
   const [activeStep, setActiveStep] = useState<number>(0);
+  const scrollContainerRef = useIsolatedScroll<HTMLDivElement>();
 
   const currentStop = journey[activeStep] || journey[0];
 
@@ -52,8 +54,13 @@ export default function FiveContinentsScrollytelling({ journey }: FiveContinents
               </span>
             </div>
 
-            {/* Scrollable list: only scrolls when cursor is inside (overscroll-contain) */}
-            <div className="flex flex-col gap-2.5 max-h-[640px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar p-1 rounded-2xl bg-[#171412]/60 border border-white/5">
+            {/* Scrollable list: strictly isolated scrolling when cursor is inside */}
+            <div
+              ref={scrollContainerRef}
+              data-lenis-prevent="true"
+              data-lenis-prevent-wheel="true"
+              className="flex flex-col gap-2.5 max-h-[640px] overflow-y-auto overscroll-contain pr-2 custom-scrollbar p-1 rounded-2xl bg-[#171412]/60 border border-white/5"
+            >
               {journey.map((item, idx) => {
                 const isActive = idx === activeStep;
                 return (

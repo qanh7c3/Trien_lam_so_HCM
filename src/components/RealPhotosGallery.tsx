@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, MapPin, ExternalLink, X, ZoomIn, ShieldCheck } from "lucide-react";
 import { IRealPhoto } from "@/models/RealPhoto";
+import { useIsolatedScroll, useLockBodyScroll } from "@/hooks/useIsolatedScroll";
 
 interface RealPhotosGalleryProps {
   photos: IRealPhoto[];
@@ -12,6 +13,10 @@ interface RealPhotosGalleryProps {
 
 export default function RealPhotosGallery({ photos }: RealPhotosGalleryProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<IRealPhoto | null>(null);
+  const modalScrollRef = useIsolatedScroll<HTMLDivElement>();
+
+  // Lock main body and lenis scrolling when modal is open
+  useLockBodyScroll(!!selectedPhoto);
 
   return (
     <section id="portrait" className="py-24 relative bg-[#171412] border-t border-[#D4AF37]/15">
@@ -93,60 +98,80 @@ export default function RealPhotosGallery({ photos }: RealPhotosGalleryProps) {
       {/* Detail Modal */}
       <AnimatePresence>
         {selectedPhoto && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md">
+          <div
+            onClick={() => setSelectedPhoto(null)}
+            data-lenis-prevent="true"
+            data-lenis-prevent-wheel="true"
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-6 bg-black/85 backdrop-blur-md overflow-hidden cursor-pointer"
+          >
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3 }}
-              className="relative max-w-3xl w-full rounded-3xl bg-[#1C1917] gold-border gold-glow-lg overflow-hidden shadow-2xl border border-white/20"
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              transition={{ duration: 0.25 }}
+              onClick={(e) => e.stopPropagation()}
+              data-lenis-prevent="true"
+              data-lenis-prevent-wheel="true"
+              className="relative max-w-3xl lg:max-w-4xl xl:max-w-5xl w-full max-h-[92vh] flex flex-col rounded-3xl bg-[#1C1917] gold-border gold-glow-lg overflow-hidden shadow-2xl border border-white/20 cursor-default"
             >
+              {/* Prominent, Non-clipped Close Button */}
               <button
                 onClick={() => setSelectedPhoto(null)}
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/60 hover:bg-black/90 text-white transition-colors"
-                aria-label="Đóng"
+                className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-20 p-2 sm:p-2.5 rounded-full bg-black/80 hover:bg-black text-white hover:text-[#D4AF37] border border-white/25 shadow-2xl transition-all cursor-pointer"
+                aria-label="Đóng cửa sổ chi tiết"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
 
-              <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-black">
+              {/* Flexible, Viewport-constrained Image Container (Larger & Taller) */}
+              <div className="relative w-full h-[280px] sm:h-[380px] md:h-[460px] lg:h-[520px] max-h-[55vh] shrink-0 bg-black flex items-center justify-center border-b border-[#D4AF37]/25 overflow-hidden">
                 <Image
                   src={selectedPhoto.image_url}
                   alt={selectedPhoto.title}
                   fill
-                  className="object-contain"
+                  sizes="(max-width: 1280px) 100vw, 1100px"
+                  className="object-contain p-1.5 sm:p-2"
+                  priority
                 />
               </div>
 
-              <div className="p-6 sm:p-8">
-                <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="px-3 py-1 rounded-full bg-white text-[#12100E] text-xs font-serif font-bold">
-                    Năm {selectedPhoto.year}
-                  </span>
-                  <span className="flex items-center gap-1 text-xs text-[#F3E5AB]">
-                    <MapPin className="w-3.5 h-3.5" />
-                    {selectedPhoto.location}
-                  </span>
+              {/* Scrollable Content Area: Isolated Wheel Scrolling */}
+              <div
+                ref={modalScrollRef}
+                data-lenis-prevent="true"
+                data-lenis-prevent-wheel="true"
+                className="p-5 sm:p-7 overflow-y-auto overscroll-contain flex-1 flex flex-col justify-between custom-scrollbar"
+              >
+                <div>
+                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                    <span className="px-3.5 py-1 rounded-full bg-white text-[#12100E] text-xs sm:text-sm font-serif font-bold shadow-sm">
+                      Năm {selectedPhoto.year}
+                    </span>
+                    <span className="flex items-center gap-1.5 text-xs sm:text-sm text-[#F3E5AB]">
+                      <MapPin className="w-4 h-4 text-[#D4AF37]" />
+                      <span>{selectedPhoto.location}</span>
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif-title text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 leading-snug">
+                    {selectedPhoto.title}
+                  </h3>
+
+                  <p className="text-sm sm:text-base text-[#EDE8DF]/95 leading-relaxed mb-5 font-sans">
+                    {selectedPhoto.historical_context}
+                  </p>
                 </div>
 
-                <h3 className="font-serif-title text-xl sm:text-2xl font-bold text-white mb-3">
-                  {selectedPhoto.title}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-[#EDE8DF]/90 leading-relaxed mb-6 font-sans">
-                  {selectedPhoto.historical_context}
-                </p>
-
-                <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between text-xs text-[#C5A059] gap-2 font-sans">
-                  <span className="text-white/80">Lưu trữ: <strong>{selectedPhoto.source_name}</strong></span>
+                <div className="pt-3.5 border-t border-white/10 flex flex-wrap items-center justify-between text-xs sm:text-sm text-[#C5A059] gap-3 font-sans shrink-0">
+                  <span className="text-white/80">Lưu trữ: <strong className="text-white">{selectedPhoto.source_name}</strong></span>
                   <a
                     href={selectedPhoto.source_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[#F3E5AB] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-[#F3E5AB] hover:underline font-medium"
                   >
                     <span>Kiểm chứng nguồn</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
                 </div>
               </div>

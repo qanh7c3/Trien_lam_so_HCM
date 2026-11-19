@@ -1,0 +1,13 @@
+@echo off
+set LANGFLOW_CORS_ORIGINS=*
+set LANGFLOW_HOST=0.0.0.0
+set LANGFLOW_PORT=7860
+set LANGFLOW_AUTO_LOGIN=true
+set LANGFLOW_SKIP_AUTH_AUTO_LOGIN=true
+set DO_NOT_TRACK=true
+set LANGFLOW_SUPERUSER=admin
+set LANGFLOW_SUPERUSER_PASSWORD=AdminPassword123!
+set GEMINI_API_KEY=%GEMINI_API_KEY%
+set GOOGLE_API_KEY=%GOOGLE_API_KEY%
+set LANGFLOW_KNOWLEDGE_BASES_DIR=C:\Users\qanh\.langflow\kb_storage
+langflow run --host 0.0.0.0 --port 7860 --open-browser

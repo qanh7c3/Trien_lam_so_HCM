@@ -1,9 +1,11 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, BookOpen, Quote, ShieldCheck, ExternalLink, Bookmark, Calendar } from "lucide-react";
 import { IStoryMilestone } from "@/models/StoryMilestone";
+import { useIsolatedScroll, useLockBodyScroll } from "@/hooks/useIsolatedScroll";
 
 interface StoryModalProps {
   story: IStoryMilestone | null;
@@ -11,17 +13,40 @@ interface StoryModalProps {
 }
 
 export default function StoryModal({ story, onClose }: StoryModalProps) {
+  const storyScrollRef = useIsolatedScroll<HTMLDivElement>();
+
+  // Lock body and Lenis scroll when story modal is open
+  useLockBodyScroll(!!story);
+
+  useEffect(() => {
+    if (!story) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [story, onClose]);
+
   if (!story) return null;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md">
+      <div
+        onClick={onClose}
+        data-lenis-prevent="true"
+        data-lenis-prevent-wheel="true"
+        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md overflow-hidden cursor-pointer"
+      >
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.96 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
-          className="relative max-w-4xl w-full max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF8F5] text-[#1A1614] p-6 sm:p-10 shadow-2xl border-2 border-[#D4AF37]/50 flex flex-col justify-between"
+          onClick={(e) => e.stopPropagation()}
+          ref={storyScrollRef}
+          data-lenis-prevent="true"
+          data-lenis-prevent-wheel="true"
+          className="relative max-w-4xl w-full max-h-[92vh] overflow-y-auto overscroll-contain custom-scrollbar rounded-3xl bg-[#FAF8F5] text-[#1A1614] p-6 sm:p-10 shadow-2xl border-2 border-[#D4AF37]/50 flex flex-col justify-between cursor-default"
         >
           {/* Close Button */}
           <button

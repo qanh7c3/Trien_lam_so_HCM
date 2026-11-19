@@ -5,47 +5,179 @@ import { IResistanceHistory } from "@/models/ResistanceHistory";
 
 export const verifiedPhotos: IRealPhoto[] = [
   {
-    title: "Nguyễn Ái Quốc tại Đại hội Marseille của Đảng Xã hội Pháp",
-    year: 1921,
-    location: "Marseille, Cộng hòa Pháp",
+    title: "Chân dung cụ Phó bảng Nguyễn Sinh Sắc (1862–1929)",
+    year: 1929,
+    location: "Làng Sen, Kim Liên, Nam Đàn, Nghệ An",
     historical_context:
-      "Năm 1921, Nguyễn Ái Quốc tham dự Đại hội đại biểu toàn quốc lần thứ nhất của Đảng Cộng sản Pháp tại thành phố cảng Marseille với tư cách đại biểu các dân tộc thuộc địa Đông Dương. Bức ảnh do cơ quan ảnh Meurisse chụp và được lưu trữ chính thống tại Thư viện Quốc gia Pháp (BNF Gallica).",
-    image_url: "/images/archive/marseille-1921.jpg",
+      "Thân phụ của Chủ tịch Hồ Chí Minh, một nhà nho đỗ Phó bảng yêu nước, thương dân sâu sắc. Tấm lòng thanh bạch và nhân cách mẫu mực của cụ đã ảnh hưởng sâu sắc đến lý tưởng giải phóng dân tộc của Bác.",
+    image_url: "/images/archive/01-nguyen-sinh-sac-than-phu.jpg",
+    source_name: "Bảo tàng Lịch sử Quốc gia & Khu di tích Kim Liên",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Di tích Trường Dục Thanh (Phan Thiết, Bình Thuận)",
+    year: 1910,
+    location: "Thành phố Phan Thiết, tỉnh Bình Thuận",
+    historical_context:
+      "Ngôi trường do các sĩ phu yêu nước Duy Tân sáng lập, nơi thầy giáo trẻ Nguyễn Tất Thành dừng chân dạy chữ Quốc ngữ và thể dục cho học sinh trước khi vào Sài Gòn ra đi tìm đường cứu nước.",
+    image_url: "/images/archive/02-truong-duc-thanh-phan-thiet.jpg",
+    source_name: "Bảo tàng Hồ Chí Minh – Chi nhánh Bình Thuận",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Bến Nhà Rồng – Cảng Sài Gòn xưa (1911)",
+    year: 1911,
+    location: "Quận 4, Thành phố Hồ Chí Minh",
+    historical_context:
+      "Nơi người thanh niên yêu nước Nguyễn Tất Thành bước lên con tàu Amiral Latouche-Tréville ngày 5 tháng 6 năm 1911, mở đầu thiên anh hùng ca 30 năm bôn ba khắp năm châu bốn biển tìm con đường giải phóng cho non sông.",
+    image_url: "/images/archive/03-ben-nha-rong-saigon.jpg",
+    source_name: "Bảo tàng Hồ Chí Minh – Chi nhánh TP. Hồ Chí Minh",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Biển đồng tưởng niệm tại Khách sạn Carlton (Luân Đôn)",
+    year: 1913,
+    location: "Haymarket, Luân Đôn, Vương quốc Anh",
+    historical_context:
+      "Tấm biển di tích chính thức tại trung tâm Luân Đôn ghi nhận Nguyễn Tất Thành từng làm việc tại khách sạn Carlton nổi tiếng và tham gia Hội Lao động hải ngoại trong những năm tháng hoạt động tại Anh (1913–1917).",
+    image_url: "/images/archive/04-carlton-hotel-london.jpg",
+    source_name: "Hội đồng Thành phố Westminster (Luân Đôn) & ĐSQ Việt Nam tại Anh",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Ngôi nhà số 9 ngõ Compoint (Quận 17, Paris)",
+    year: 1921,
+    location: "Quận 17, Paris, Cộng hòa Pháp",
+    historical_context:
+      "Căn phòng trọ giản dị rộng 9m2 không lò sưởi, nơi Nguyễn Ái Quốc sống những ngày đông băng giá với viên gạch hồng sưởi ấm, chủ bút báo Người Cùng Khổ (Le Paria) và hoàn thành tác phẩm 'Bản án chế độ thực dân Pháp'.",
+    image_url: "/images/archive/05-ngo-compoint-paris.jpg",
     source_name: "Thư viện Quốc gia Pháp (BNF Gallica) & Bảo tàng Hồ Chí Minh",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
   },
   {
-    title: "Chân dung Chủ tịch Hồ Chí Minh in trong cuốn 'Trang sử mới'",
-    year: 1945,
-    location: "Hà Nội, Việt Nam",
+    title: "Trụ sở Hội người Việt Nam yêu nước số 6 Villa des Gobelins",
+    year: 1919,
+    location: "Quận 13, Paris, Cộng hòa Pháp",
     historical_context:
-      "Bức ảnh chân dung lịch sử của Chủ tịch Hồ Chí Minh ngay sau thắng lợi của Cách mạng Tháng Tám năm 1945, được xuất bản chính thức trong cuốn sách 'Trang sử mới' giới thiệu về vị lãnh tụ kính yêu của nước Việt Nam Dân chủ Cộng hòa non trẻ.",
-    image_url: "/images/archive/trang-su-moi-1945.jpg",
-    source_name: "Bảo tàng Lịch sử Quốc gia & Bảo tàng Hồ Chí Minh",
+      "Nơi Nguyễn Ái Quốc cùng các cụ Phan Chu Trinh, luật sư Phan Văn Trường soạn thảo bản 'Yêu sách của nhân dân An Nam' gồm 8 điểm gửi tới Hội nghị Hòa bình Versailles năm 1919 gây chấn động dư luận quốc tế.",
+    image_url: "/images/archive/06-villa-des-gobelins-paris.jpg",
+    source_name: "Bảo tàng Hồ Chí Minh & Tư liệu Kiều bào tại Pháp",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
   },
   {
-    title: "Chủ tịch Hồ Chí Minh và đồng chí Võ Nguyên Giáp tại Bắc Bộ Phủ",
-    year: 1945,
-    location: "Bắc Bộ Phủ, Hà Nội",
+    title: "Nguyễn Ái Quốc tại Đại hội Tours (Pháp, 12/1920)",
+    year: 1920,
+    location: "Thành phố Tours, Cộng hòa Pháp",
     historical_context:
-      "Mùa thu năm 1945, sau khi đọc Tuyên ngôn Độc lập ngày 2/9, Chủ tịch Hồ Chí Minh cùng đồng chí Võ Nguyên Giáp bàn thảo các kế hoạch cấp bách về củng cố chính quyền nhân dân, phát động phong trào diệt giặc đói, giặc dốt và giặc ngoại xâm.",
-    image_url: "/images/archive/ho-chi-minh-vo-nguyen-giap-1945.jpg",
-    source_name: "Thông tấn xã Việt Nam & Bảo tàng Hồ Chí Minh",
+      "Nguyễn Ái Quốc bỏ phiếu tán thành Quốc tế III và trở thành một trong những người tham gia sáng lập Đảng Cộng sản Pháp, bước ngoặt mang tính lịch sử từ chủ nghĩa yêu nước đến chủ nghĩa Mác - Lênin.",
+    image_url: "/images/archive/07-dai-hoi-tours-phap-1920.jpg",
+    source_name: "Thư viện Quốc gia Pháp (BNF Gallica)",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Nguyễn Ái Quốc tại Đại hội Marseille của Đảng Cộng sản Pháp",
+    year: 1921,
+    location: "Marseille, Cộng hòa Pháp",
+    historical_context:
+      "Năm 1921, Nguyễn Ái Quốc tham dự Đại hội đại biểu toàn quốc lần thứ nhất của Đảng Cộng sản Pháp tại thành phố cảng Marseille với tư cách đại biểu các dân tộc thuộc địa Đông Dương. Bức ảnh do cơ quan ảnh Meurisse chụp và lưu trữ tại BNF Gallica.",
+    image_url: "/images/archive/08-dai-hoi-marseille-1921.jpg",
+    source_name: "Thư viện Quốc gia Pháp (BNF Gallica) & Bảo tàng Hồ Chí Minh",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Bản gốc tác phẩm 'Đường Kách mệnh' (Quảng Châu, 1927)",
+    year: 1927,
+    location: "Quảng Châu, Trung Quốc",
+    historical_context:
+      "Cuốn sách lịch sử xuất bản năm 1927 tại Quảng Châu, tập hợp các bài giảng của Nguyễn Ái Quốc huấn luyện cán bộ cho Hội Việt Nam Cách mạng Thanh niên, Bảo vật Quốc gia số 11 của Việt Nam.",
+    image_url: "/images/archive/09-duong-kach-menh-1927.jpg",
+    source_name: "Bảo tàng Lịch sử Quốc gia",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Ngôi nhà Bác Hồ từng ở tại Bản Mạy, Nakhon Phanom (Thái Lan)",
+    year: 1928,
+    location: "Bản Mạy, tỉnh Nakhon Phanom, Thái Lan",
+    historical_context:
+      "Nơi Nguyễn Ái Quốc hoạt động cách mạng với bí danh Thầu Chín trong những năm 1928–1929, sống chan hòa cùng bà con kiều bào, mở trường dạy chữ Quốc ngữ và truyền bá lý tưởng cách mạng.",
+    image_url: "/images/archive/10-nha-nakhon-phanom-thailand.jpg",
+    source_name: "Khu Di tích Tưởng niệm Chủ tịch Hồ Chí Minh tại Thái Lan",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Khu di tích lịch sử Pác Bó (Hà Quảng, Cao Bằng)",
+    year: 1941,
+    location: "Xã Trường Hà, huyện Hà Quảng, tỉnh Cao Bằng",
+    historical_context:
+      "Cột mốc 108 biên giới Việt - Trung, nơi Lãnh tụ Nguyễn Ái Quốc đặt bước chân đầu tiên trở về Tổ quốc ngày 28/1/1941 sau đúng 30 năm bôn ba tìm đường cứu nước.",
+    image_url: "/images/archive/11-pac-bo-cao-bang-1941.jpg",
+    source_name: "Khu di tích Quốc gia đặc biệt Pác Bó",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Bác Hồ cùng Phái bộ OSS Deer Team (Mỹ) tại Tân Trào",
+    year: 1945,
+    location: "Chiến khu Tân Trào, Tuyên Quang",
+    historical_context:
+      "Bức ảnh lịch sử chụp Chủ tịch Hồ Chí Minh cùng nhóm tình báo OSS Deer Team của quân đội Hoa Kỳ do Thiếu tá Allison Thomas dẫn đầu tại Tân Trào trong giai đoạn hợp tác chống phát xít Nhật mùa hè năm 1945.",
+    image_url: "/images/archive/15-bac-ho-va-doi-oss-deer-team-1945.jpg",
+    source_name: "Cơ quan Lưu trữ Quốc gia Hoa Kỳ (NARA) & OSS Archives",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Biển người hơn 50 vạn đồng bào tại Ba Đình ngày 2/9/1945",
+    year: 1945,
+    location: "Quảng trường Ba Đình, Hà Nội",
+    historical_context:
+      "Quang cảnh biển người rừng cờ đỏ sao vàng lắng nghe Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập khai sinh nước Việt Nam Dân chủ Cộng hòa, mở ra kỷ nguyên độc lập tự do cho Tổ quốc.",
+    image_url: "/images/archive/16-quan-chung-ba-dinh-2-9-1945.jpg",
+    source_name: "Trung tâm Lưu trữ Quốc gia III & Thông tấn xã Việt Nam",
     source_url: "https://vnanet.vn",
     verified: true,
   },
   {
-    title: "Chân dung Chủ tịch Hồ Chí Minh tại Bắc Bộ Phủ năm 1946",
-    year: 1946,
-    location: "Bắc Bộ Phủ, Hà Nội",
+    title: "Di tích lịch sử Bắc Bộ Phủ (Hà Nội, 1945–1946)",
+    year: 1945,
+    location: "Số 12 phố Ngô Quyền, Hoàn Kiếm, Hà Nội",
     historical_context:
-      "Bức chân dung kinh điển chụp Chủ tịch Hồ Chí Minh tại Bắc Bộ Phủ trong thời kỳ kháng chiến chuẩn bị bùng nổ. Ánh mắt Người sáng ngời, thể hiện ý chí gang thép và niềm tin tất thắng vào cuộc chiến đấu bảo vệ nền độc lập dân tộc.",
-    image_url: "/images/archive/portrait-1946.jpg",
-    source_name: "Khu di tích Chủ tịch Hồ Chí Minh tại Phủ Chủ tịch",
-    source_url: "https://ditichhochiminhphuchutich.gov.vn",
+      "Tòa nhà Phủ Thống sứ Bắc Kỳ xưa, nơi Chủ tịch Hồ Chí Minh và Chính phủ lâm thời đặt trụ sở làm việc, chèo lái con thuyền cách mạng vượt qua muôn vàn thác ghềnh 'ngàn cân treo sợi tóc'.",
+    image_url: "/images/archive/17-bac-bo-phu-ha-noi.jpg",
+    source_name: "Bộ Ngoại giao & Bảo tàng Lịch sử Quốc gia",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Lễ ký kết Hiệp định Sơ bộ ngày 6/3/1946 tại Hà Nội",
+    year: 1946,
+    location: "Số 38 phố Lý Thái Tổ, Hà Nội",
+    historical_context:
+      "Chủ tịch Hồ Chí Minh và đại diện Chính phủ Pháp Jean Sainteny ký Hiệp định Sơ bộ 6/3/1946, bước đi sách lược thiên tài 'hòa để tiến', gạt 20 vạn quân Tưởng khỏi miền Bắc và tranh thủ thời gian chuẩn bị lực lượng.",
+    image_url: "/images/archive/18-hiep-dinh-so-bo-6-3-1946.jpg",
+    source_name: "Trung tâm Lưu trữ Quốc gia III & Báo Cứu Quốc",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    title: "Chủ tịch Hồ Chí Minh ký Tạm ước Việt - Pháp tại Paris",
+    year: 1946,
+    location: "Paris, Cộng hòa Pháp",
+    historical_context:
+      "Chủ tịch Hồ Chí Minh ký Tạm ước 14/9/1946 với Bộ trưởng Hải ngoại Pháp Marius Moutet, bước nhượng bộ có nguyên tắc để kéo dài thêm thời gian hòa bình quý giá cho toàn dân tộc chuẩn bị toàn diện cho cuộc kháng chiến trường kỳ.",
+    image_url: "/images/archive/19-tam-uoc-viet-phap-paris-1946.jpg",
+    source_name: "Bảo tàng Lịch sử Quốc gia & TT Lưu trữ Quốc gia",
+    source_url: "https://baotanghochiminh.vn",
     verified: true,
   },
   {
@@ -53,7 +185,7 @@ export const verifiedPhotos: IRealPhoto[] = [
     year: 1950,
     location: "Núi Báo Đông, Đông Khê, Cao Bằng",
     historical_context:
-      "Sáng 16/9/1950, Chủ tịch Hồ Chí Minh lên đài quan sát trên đỉnh núi Báo Đông trực tiếp theo dõi, chỉ đạo trận đánh cứ điểm Đông Khê mở màn Chiến dịch Biên giới Thu Đông 1950. Tác phẩm do nghệ sĩ nhiếp ảnh Vũ Năng An ghi lại, trở thành biểu tượng bất hủ của tinh thần tiền tuyến.",
+      "Sáng 16/9/1950, Chủ tịch Hồ Chí Minh lên đài quan sát trên đỉnh núi Báo Đông trực tiếp theo dõi, chỉ đạo trận đánh cứ điểm Đông Khê mở màn Chiến dịch Biên giới Thu Đông 1950. Tác phẩm do nhiếp ảnh gia Vũ Năng An ghi lại.",
     image_url: "/images/archive/dong-khe-1950.jpg",
     source_name: "Thông tấn xã Việt Nam (Nhiếp ảnh gia Vũ Năng An)",
     source_url: "https://vnanet.vn",
@@ -64,32 +196,32 @@ export const verifiedPhotos: IRealPhoto[] = [
     year: 1954,
     location: "Chiến khu Việt Bắc (Định Hóa, Thái Nguyên)",
     historical_context:
-      "Chủ tịch Hồ Chí Minh cùng Đại tướng, Tổng Tư lệnh Võ Nguyên Giáp nghiên cứu sa bàn tác chiến và kế hoạch tác chiến tiêu diệt tập đoàn cứ điểm Điện Biên Phủ của thực dân Pháp vào đầu năm 1954.",
+      "Chủ tịch Hồ Chí Minh cùng Đại tướng, Tổng Tư lệnh Võ Nguyên Giáp nghiên cứu sa bàn tác chiến và kế hoạch tiêu diệt tập đoàn cứ điểm Điện Biên Phủ của thực dân Pháp vào đầu năm 1954.",
     image_url: "/images/archive/giap-ho-1954.jpg",
     source_name: "Báo Nhân Dân & Bảo tàng Lịch sử Quân sự Việt Nam",
     source_url: "https://nhandan.vn",
     verified: true,
   },
   {
-    title: "Chủ tịch Hồ Chí Minh trong trang phục áo nâu tại chiến khu",
-    year: 1950,
-    location: "Chiến khu Việt Bắc",
+    title: "Chủ tịch Hồ Chí Minh theo dõi trận bóng đá quốc tế tại Hàng Đẫy",
+    year: 1958,
+    location: "Sân vận động Hàng Đẫy, Hà Nội",
     historical_context:
-      "Hình ảnh giản dị, thanh cao của Bác Hồ trong bộ quần áo nâu vải thô, chiếc mũ lá và gậy tre băng rừng lội suối thăm đồng bào, chiến sĩ trong những năm tháng kháng chiến trường kỳ chống thực dân Pháp.",
-    image_url: "/images/archive/ho-chi-minh-1950s.jpg",
-    source_name: "Bảo tàng Hồ Chí Minh",
-    source_url: "https://baotanghochiminh.vn",
+      "Hình ảnh đời thường thanh cao, gần gũi và ấm áp của Bác Hồ khi ngồi trên khán đài giản dị hòa cùng hàng vạn nhân dân thủ đô theo dõi trận bóng đá hữu nghị quốc tế năm 1958.",
+    image_url: "/images/archive/21-bac-ho-xem-bong-da-1958.jpg",
+    source_name: "Thông tấn xã Việt Nam & Bảo tàng Hồ Chí Minh",
+    source_url: "https://vnanet.vn",
     verified: true,
   },
   {
-    title: "Nhà sàn Bác Hồ trong khuôn viên Phủ Chủ tịch",
-    year: 1958,
-    location: "Khu di tích Phủ Chủ tịch, Ba Đình, Hà Nội",
+    title: "Bác Hồ ân cần chia kẹo và trò chuyện cùng các cháu thiếu nhi",
+    year: 1955,
+    location: "Phủ Chủ tịch, Hà Nội",
     historical_context:
-      "Ngôi nhà sàn bằng gỗ khánh thành vào tháng 5/1958 theo thiết kế của kiến trúc sư Nguyễn Văn Ninh, lấy mẫu từ nhà sàn đồng bào Việt Bắc. Nơi đây Chủ tịch Hồ Chí Minh đã sống, làm việc, tiếp đón khách quốc tế và viết bản Di chúc thiêng liêng từ năm 1958 đến năm 1969.",
-    image_url: "/images/archive/nha-san-bac-ho.jpg",
-    source_name: "Khu di tích Chủ tịch Hồ Chí Minh tại Phủ Chủ tịch",
-    source_url: "https://ditichhochiminhphuchutich.gov.vn",
+      "Chủ tịch Hồ Chí Minh quây quần, âu yếm các cháu thiếu nhi Việt Nam, hiện thân của tình yêu thương bao la người Cha già dành cho thế hệ mầm non tương lai của nước nhà.",
+    image_url: "/images/archive/22-bac-ho-voi-thieu-nhi.jpg",
+    source_name: "Bảo tàng Hồ Chí Minh",
+    source_url: "https://baotanghochiminh.vn",
     verified: true,
   },
 ];
@@ -106,7 +238,7 @@ export const verifiedJourney: IFiveContinentsJourney[] = [
       "Ngày 5/6/1911, người thanh niên yêu nước Nguyễn Tất Thành lấy tên là Văn Ba, xin làm phụ bếp trên con tàu buôn Amiral Latouche-Tréville của hãng Năm Sao (Pháp), chính thức rời Bến Nhà Rồng bắt đầu hành trình tìm con đường cứu nước, cứu dân.",
     historical_significance:
       "Khởi đầu cho bước ngoặt lịch sử vĩ đại của cách mạng giải phóng dân tộc Việt Nam trong thế kỷ XX.",
-    image_url: "/images/archive/marseille-1921.jpg",
+    image_url: "/images/archive/03-ben-nha-rong-saigon.jpg",
     source_name: "Bộ sách Hồ Chí Minh Biên niên tiểu sử (NXB Chính trị quốc gia Sự thật)",
     source_url: "https://tulieuvankien.dangcongsan.vn",
     verified: true,
@@ -122,7 +254,7 @@ export const verifiedJourney: IFiveContinentsJourney[] = [
       "Tàu ghé cảng Singapore rồi vượt Ấn Độ Dương tới cảng Colombo (Tây Lan - Sri Lanka). Nguyễn Tất Thành quan sát đời sống cùng cực của phu khuân vác bản xứ dưới ách thống trị của thực dân Anh.",
     historical_significance:
       "Những nhận thức thực tế ban đầu về nỗi thống khổ chung của các dân tộc phương Đông thuộc địa.",
-    image_url: "/images/archive/marseille-1921.jpg",
+    image_url: "/images/archive/latouche-treville-1911.jpg",
     source_name: "Bảo tàng Hồ Chí Minh",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
@@ -138,8 +270,8 @@ export const verifiedJourney: IFiveContinentsJourney[] = [
       "Ngày 6/7/1911, tàu cập cảng Marseille. Lần đầu tiên đặt chân lên đất Pháp, Người tận mắt chứng kiến những người dân Pháp nghèo khổ cũng phải lao động cật lực, nhận ra người Pháp ở chính quốc tốt hơn những tên thực dân Pháp ở thuộc địa.",
     historical_significance:
       "Hình thành luận điểm cốt lõi: Nhân dân lao động ở đâu cũng là bạn, giai cấp bóc lột ở đâu cũng là thù.",
-    image_url: "/images/archive/marseille-1921.jpg",
-    source_name: "Bảo tàng Hồ Chí Minh",
+    image_url: "/images/archive/08-dai-hoi-marseille-1921.jpg",
+    source_name: "Bảo tàng Hồ Chí Minh & BNF Gallica",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
   },
@@ -170,8 +302,8 @@ export const verifiedJourney: IFiveContinentsJourney[] = [
       "Người tới nước Anh, làm các công việc nặng nhọc như quét tuyết trường học, đốt lò, phụ bếp ở khách sạn Carlton. Người tự học tiếng Anh qua sách báo, tham gia Hội Lao động hải ngoại (Overseas Workers' Association), ủng hộ phong trào công nhân Ireland.",
     historical_significance:
       "Trưởng thành trong môi trường phong trào công nhân quốc tế tại trung tâm đế quốc tư bản lớn nhất thế giới lúc bấy giờ.",
-    image_url: "/images/archive/marseille-1921.jpg",
-    source_name: "Bảo tàng Hồ Chí Minh",
+    image_url: "/images/archive/04-carlton-hotel-london.jpg",
+    source_name: "Hội đồng Thành phố Westminster & Bảo tàng Hồ Chí Minh",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
   },
@@ -183,10 +315,10 @@ export const verifiedJourney: IFiveContinentsJourney[] = [
     continent: "Châu Âu",
     coordinates: { lat: 48.8566, lng: 2.3522 },
     activities:
-      "Trở lại Pháp cuối năm 1917, lấy tên Nguyễn Ái Quốc. Năm 1919 gửi bản 'Yêu sách của nhân dân An Nam' tới Hội nghị Versailles. Tháng 7/1920 đọc 'Sơ thảo lần thứ nhất Luận cương về các vấn đề dân tộc và thuộc địa' của V.I. Lênin. Tháng 12/1920, bỏ phiếu gia nhập Quốc tế III và sáng lập Đảng Cộng sản Pháp tại Đại hội Tours. Sáng lập Hội Liên hiệp Thuộc địa và chủ bút báo 'Le Paria' (1921–1923).",
+      "Trở lại Pháp cuối năm 1917, lấy tên Nguyễn Ái Quốc. Năm 1919 gửi bản 'Yêu sách của nhân dân An Nam' tới Hội nghị Versailles. Tháng 7/1920 đọc 'Sơ thảo lần thứ nhất Luận cương về các vấn đề dân tộc và thuộc địa' của V.I. Lênin. Tháng 12/1920, bỏ phiếu gia nhập Quốc tế III và sáng lập Đảng Cộng sản Pháp tại Đại hội Tours. Sáng lập Hội Liên hiệp Thuộc địa và chủ bút báo 'Le Paria' tại số 9 ngõ Compoint (1921–1923).",
     historical_significance:
       "Tìm ra con đường cứu nước đúng đắn cho dân tộc Việt Nam: Con đường cách mạng vô sản. Nguyễn Ái Quốc trở thành người cộng sản Việt Nam đầu tiên.",
-    image_url: "/images/archive/marseille-1921.jpg",
+    image_url: "/images/archive/05-ngo-compoint-paris.jpg",
     source_name: "Bảo tàng Hồ Chí Minh & Cổng TTĐT Đảng Cộng sản Việt Nam",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
@@ -202,7 +334,7 @@ export const verifiedJourney: IFiveContinentsJourney[] = [
       "Tháng 6/1923, Nguyễn Ái Quốc bí mật rời Paris sang Petrograd rồi tới Moskva. Người tham dự Đại hội lần thứ nhất Quốc tế Nông dân (10/1923), được bầu vào Đoàn Chủ tịch Quốc tế Nông dân. Dự Đại hội V Quốc tế Cộng sản (1924) và học tập tại Trường Đại học Phương Đông.",
     historical_significance:
       "Khẳng định vai trò chiến lược của phong trào giải phóng dân tộc ở các nước thuộc địa đối với cách mạng vô sản thế giới.",
-    image_url: "/images/archive/marseille-1921.jpg",
+    image_url: "/images/archive/07-dai-hoi-tours-phap-1920.jpg",
     source_name: "Hồ Chí Minh Biên niên tiểu sử (NXB Chính trị quốc gia Sự thật)",
     source_url: "https://tulieuvankien.dangcongsan.vn",
     verified: true,
@@ -218,9 +350,9 @@ export const verifiedJourney: IFiveContinentsJourney[] = [
       "Tháng 11/1924, Nguyễn Ái Quốc đến Quảng Châu với bí danh Lý Thụy. Tháng 6/1925, sáng lập Hội Việt Nam Cách mạng Thanh niên, xuất bản báo 'Thanh Niên' (số đầu ra ngày 21/6/1925), mở các khóa đào tạo chính trị cho cán bộ cách mạng tiền bối, tập hợp thành cuốn sách bất hủ 'Đường Kách mệnh' (1927).",
     historical_significance:
       "Chuẩn bị toàn diện về tư tưởng, chính trị và tổ chức cho sự ra đời của Đảng Cộng sản Việt Nam.",
-    image_url: "/images/archive/trang-su-moi-1945.jpg",
-    source_name: "Bảo tàng Hồ Chí Minh & Báo Nhân Dân",
-    source_url: "https://nhandan.vn",
+    image_url: "/images/archive/09-duong-kach-menh-1927.jpg",
+    source_name: "Bảo tàng Lịch sử Quốc gia & Bảo tàng Hồ Chí Minh",
+    source_url: "https://baotanghochiminh.vn",
     verified: true,
   },
   {
@@ -234,7 +366,7 @@ export const verifiedJourney: IFiveContinentsJourney[] = [
       "Mùa thu năm 1928, Nguyễn Ái Quốc bí mật tới Xiêm (Thái Lan) với bí danh Thầu Chín. Người sống chan hòa cùng bà con kiều bào, hướng dẫn mở trường dạy chữ quốc ngữ, lập Hội Thân ái, đào tạo cán bộ và xây dựng mối quan hệ hữu nghị truyền thống với nhân dân Thái Lan.",
     historical_significance:
       "Xây dựng hậu phương cơ sở cách mạng vững chắc ở nước ngoài, giác ngộ và đoàn kết kiều bào hướng về giải phóng quê hương.",
-    image_url: "/images/archive/marseille-1921.jpg",
+    image_url: "/images/archive/10-nha-nakhon-phanom-thailand.jpg",
     source_name: "Khu tưởng niệm Chủ tịch Hồ Chí Minh tại Nakhon Phanom & Bảo tàng HCM",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
@@ -266,7 +398,7 @@ export const verifiedJourney: IFiveContinentsJourney[] = [
       "Sau khi thoát khỏi nhà tù thực dân Anh tại Hương Cảng nhờ sự bảo vệ công lý dũng cảm của luật sư Loseby, Người trở lại Moskva với tên Lin. Người nghiên cứu tại Viện Nghiên cứu các vấn đề dân tộc và thuộc địa, theo học nghiên cứu sinh tại Đại học Quốc tế Lênin.",
     historical_significance:
       "Bảo toàn lực lượng lãnh tụ tối cao và tích lũy chiều sâu lý luận chiến lược chuẩn bị cho thời cơ bùng nổ của chiến tranh thế giới thứ hai.",
-    image_url: "/images/archive/marseille-1921.jpg",
+    image_url: "/images/archive/06-villa-des-gobelins-paris.jpg",
     source_name: "Hồ Chí Minh Biên niên tiểu sử (NXB Chính trị quốc gia Sự thật)",
     source_url: "https://tulieuvankien.dangcongsan.vn",
     verified: true,
@@ -282,7 +414,7 @@ export const verifiedJourney: IFiveContinentsJourney[] = [
       "Ngày 28/1/1941 (mùng 2 Tết Tân Tỵ), sau đúng 30 năm bôn ba tìm đường cứu nước, Lãnh tụ Nguyễn Ái Quốc vượt qua cột mốc 108 biên giới Việt - Trung trở về Tổ quốc. Người ở và làm việc tại hang Cốc Bó, lán Khuổi Nặm, trực tiếp triệu tập Hội nghị Trung ương 8 (5/1941) thành lập Mặt trận Việt Minh.",
     historical_significance:
       "Đặt nền móng quyết định cho thắng lợi vĩ đại của Cách mạng Tháng Tám năm 1945, khai sinh ra nước Việt Nam Dân chủ Cộng hòa.",
-    image_url: "/images/archive/ho-chi-minh-1950s.jpg",
+    image_url: "/images/archive/11-pac-bo-cao-bang-1941.jpg",
     source_name: "Khu di tích Quốc gia đặc biệt Pác Bó & Bảo tàng Hồ Chí Minh",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
@@ -301,8 +433,24 @@ export const verifiedStories: IStoryMilestone[] = [
       "Vào một buổi tối đầu tháng 6/1911 tại Sài Gòn, Nguyễn Tất Thành đi dạo cùng người bạn thân là anh Tư Lê dọc theo bến cảng. Tất Thành hỏi bạn: 'Anh có yêu nước không?'. Anh Tư Lê ngạc nhiên đáp: 'Tất nhiên là có chứ!'. Tất Thành tiếp tục: 'Anh có thể giữ bí mật được không? Tôi muốn đi ra nước ngoài, xem nước Pháp và các nước khác. Sau khi xem xét họ làm như thế nào, tôi sẽ trở về giúp đồng bào chúng ta. Nhưng đi một mình, thật ra cũng có điều mạo hiểm, ví như đau ốm... Anh muốn đi với tôi không?'. Anh Tư Lê phân vân: 'Nhưng lấy đâu ra tiền mà đi?'. Nguyễn Tất Thành giơ hai bàn tay chai sạn ra trước mặt và dõng dạc nói: 'Đây, tiền đây! Chúng ta sẽ làm việc, chúng ta sẽ làm bất cứ việc gì để sống và để đi. Anh cùng đi với tôi chứ?'. Bị lôi cuốn bởi lòng nhiệt huyết của Tất Thành, anh Tư Lê đồng ý, nhưng sau đó vì hoàn cảnh gia đình không thể lên tàu. Đúng ngày 5/6/1911, người thanh niên 21 tuổi Nguyễn Tất Thành với tên Văn Ba đã bước lên con tàu vượt đại dương chỉ bằng đôi bàn tay lao động và một trái tim rực lửa yêu nước.",
     lesson_or_quote:
       "Lời dạy về ý chí tự lực cánh sinh: 'Chúng ta sẽ làm việc, chúng ta sẽ làm bất cứ việc gì để sống và để đi'.",
-    image_url: "/images/archive/marseille-1921.jpg",
+    image_url: "/images/archive/03-ben-nha-rong-saigon.jpg",
     source_name: "Tác phẩm 'Búp sen xanh' (Sơn Tùng) & Bộ sách Hồ Chí Minh Toàn tập",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    date_label: "Năm 1919",
+    year: 1919,
+    period: "1911 - 1920",
+    title: "Bản yêu sách 8 điểm và căn phòng số 6 Villa des Gobelins",
+    summary:
+      "Tại số 6 ngõ Villa des Gobelins (Paris), Nguyễn Ái Quốc cùng các nhà ái quốc tiền bối soạn thảo bản 'Yêu sách của nhân dân An Nam' gửi tới Hội nghị Versailles đòi các quyền tự do dân chủ cơ bản cho nhân dân thuộc địa.",
+    full_story:
+      "Tháng 6/1919, các nước thắng trận trong Thế chiến I họp Hội nghị Hòa bình tại lâu đài Versailles (Pháp). Thay mặt Hội những người Việt Nam yêu nước tại Pháp, người thanh niên Nguyễn Ái Quốc trong bộ âu phục cũ kỹ mượn của bạn bè đã kiên quyết đến tận phòng hội nghị gửi bản Yêu sách của nhân dân An Nam gồm 8 điểm. Bản yêu sách đòi Chính phủ Pháp phải thừa nhận các quyền tự do ngôn luận, tự do lập hội, tự do đi lại và thả tự do cho các tù chính trị. Dù các cường quốc đế quốc phớt lờ, nhưng tiếng chuông thức tỉnh từ số 6 Villa des Gobelins đã vang dội khắp năm châu, khẳng định trước toàn thế giới rằng dân tộc Việt Nam quyết không chịu làm nô lệ.",
+    lesson_or_quote:
+      "Quyền tự quyết thiêng liêng: 'Muốn được giải phóng, các dân tộc chỉ có thể trông cậy vào lực lượng của chính bản thân mình'.",
+    image_url: "/images/archive/06-villa-des-gobelins-paris.jpg",
+    source_name: "Bảo tàng Lịch sử Quốc gia & Thư viện Quốc gia Pháp",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
   },
@@ -317,7 +465,7 @@ export const verifiedStories: IStoryMilestone[] = [
       "Những năm tháng hoạt động cách mạng tại Paris, Nguyễn Ái Quốc sống tại căn phòng trọ chật hẹp số 9 ngõ Compoint (Quận 17). Căn gác nhỏ tồi tàn không có lò sưởi, chỉ có chiếc giường sắt đơn sơ và chiếc bàn con vừa làm bàn ăn vừa làm bàn viết. Mùa đông nước Pháp nhiệt độ xuống dưới 0 độ C, tuyết phủ trắng xóa các mái nhà, gió bấc thổi qua kẽ cửa buốt nhói từng đốt ngón tay. Mỗi buổi sáng trước khi ra khỏi nhà đi làm thợ ảnh, Người đặt một viên gạch nhờ bà chủ lò bánh mỳ bên cạnh nướng nhờ. Chiều tối tan sở, Người ghé lấy viên gạch đã hấp thụ đầy nhiệt lượng nóng hổi, bọc kỹ vào nhiều lớp báo cũ đem về phòng đặt xuống dưới tấm đệm nằm. Hơi ấm âm ỉ từ viên gạch hồng giúp Người chợp mắt lấy sức sau cả ngày dài lao động vất vả và viết bài báo tố cáo chế độ thực dân. Hình ảnh viên gạch hồng đã trở thành biểu tượng thiêng liêng cho nghị lực phi thường và ngọn lửa lý tưởng không bao giờ tắt của Bác Hồ giữa trời Âu băng giá.",
     lesson_or_quote:
       "Biểu tượng nghị lực cách mạng vô song: Ngọn lửa nồng nàn yêu nước đủ sức chiến thắng cái lạnh thấu xương của mùa đông đế quốc.",
-    image_url: "/images/archive/marseille-1921.jpg",
+    image_url: "/images/archive/05-ngo-compoint-paris.jpg",
     source_name: "Bảo tàng Hồ Chí Minh & Khu di tích Nhà trọ số 9 ngõ Compoint",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
@@ -333,7 +481,7 @@ export const verifiedStories: IStoryMilestone[] = [
       "Tháng Giêng năm 1941, sau 30 năm xa cách Tổ quốc, Bác Hồ trở về Pác Bó (Hà Quảng, Cao Bằng). Người ở trong hang Cốc Bó ẩm thấp, giường ngủ ghép bằng những cành cây rừng lót lá chuối khô. Những ngày mùa đông rét mướt, lương thực thiếu thốn nghiêm trọng, Bác cùng các đồng chí phải ăn cháo bẹ (cháo ngô), canh rau tàu bay, măng rừng đắng chát. Ban ngày, Bác ngồi bên bờ suối Lênin mát lạnh, lấy một phiến đá kê chông chênh làm bàn làm việc, miệt mài dịch cuốn 'Lịch sử Đảng Cộng sản (b) Liên Xô' sang tiếng Việt một cách cô đọng, dễ hiểu để làm tài liệu huấn luyện bí mật cho cán bộ. Bài thơ 'Tức cảnh Pác Bó' ra đời trong chính hoàn cảnh ấy: 'Sáng ra bờ suối, tối vào hang / Cháo bẹ rau măng vẫn sẵn sàng / Bàn đá chông chênh dịch sử Đảng / Cuộc đời cách mạng thật là sang!'. Sự lạc quan cách mạng và phong thái ung dung tự tại của Người đã truyền niềm tin mãnh liệt vào tương lai tất thắng cho toàn thể cán bộ, đảng viên.",
     lesson_or_quote:
       "'Sáng ra bờ suối, tối vào hang / Cháo bẹ rau măng vẫn sẵn sàng / Bàn đá chông chênh dịch sử Đảng / Cuộc đời cách mạng thật là sang!'",
-    image_url: "/images/archive/ho-chi-minh-1950s.jpg",
+    image_url: "/images/archive/12-hang-coc-bo-suoi-lenin.jpg",
     source_name: "Hồ Chí Minh Toàn tập (Tập 3) & Khu di tích Quốc gia đặc biệt Pác Bó",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
@@ -371,6 +519,54 @@ export const verifiedStories: IStoryMilestone[] = [
     verified: true,
   },
   {
+    date_label: "Tháng 6 năm 1957",
+    year: 1957,
+    period: "1954 - 1969",
+    title: "Hàng rào dâm bụt đỏ và giếng nước làng Sen",
+    summary:
+      "Sau 50 năm xa cách quê hương, ngày 16/6/1957, Chủ tịch Hồ Chí Minh về thăm lại quê nhà Kim Liên (Nam Đàn, Nghệ An). Người bồi hồi nhận ra từng gốc cây, hàng rào dâm bụt xưa và chiếc cổng tre bình dị của tuổi thơ.",
+    full_story:
+      "Rời quê từ năm 1906, mãi đến ngày 16/6/1957, sau 50 năm bôn ba khắp bốn biển năm châu và lãnh đạo cách mạng thắng lợi, Bác Hồ mới có dịp trở về thăm lại làng Sen quê nội và làng Hoàng Trù quê ngoại. Khi đoàn cán bộ địa phương hướng dẫn Bác đi theo con đường mới rải đá sạch sẽ, Bác xua tay cười hiền từ: 'Đường cũ làng ta đâu, Bác cháu ta cứ đi đường cũ'. Bác đi nhanh về phía ngôi nhà tranh thuở ấu thơ. Đến cổng, Người dừng lại chỉ vào hàng rào dâm bụt nở hoa đỏ thắm và hỏi: 'Hàng rào dâm bụt ngày xưa mẹ Bác trồng vẫn còn đây phải không các chú?'. Bước vào nhà, Người nhìn chiếc phản gỗ, chiếc khung cửi thân quen của mẹ Hoàng Thị Loan, mắt rưng rưng xúc động. Người nói chuyện thân mật với bà con xóm làng bằng giọng Nghệ ấm áp, căn dặn đồng bào đoàn kết, thi đua sản xuất, giữ gìn đạo đức và nếp sống quê hương nghĩa tình.",
+    lesson_or_quote:
+      "Dù ở cương vị tối cao của nguyên thủ quốc gia, Bác vẫn nguyên vẹn một tấm lòng thủy chung son sắt và tình cảm sâu nặng với quê hương nguồn cội.",
+    image_url: "/images/archive/20-khu-mo-ba-hoang-thi-loan-nam-dan.jpg",
+    source_name: "Khu di tích Quốc gia đặc biệt Kim Liên & Bảo tàng Hồ Chí Minh",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    date_label: "Năm 1958",
+    year: 1958,
+    period: "1954 - 1969",
+    title: "Bác Hồ ngồi lẫn giữa nhân dân xem bóng đá tại Hàng Đẫy",
+    summary:
+      "Năm 1958, khi đội bóng đá quốc tế sang thi đấu giao hữu, Bác Hồ đến sân vận động Hàng Đẫy và từ chối ngồi phòng VIP riêng biệt, Người chọn ngồi trên khán đài giản dị, hòa cùng tiếng hò reo cổ vũ của nhân dân Thủ đô.",
+    full_story:
+      "Một chiều thu năm 1958, trận bóng đá giao hữu giữa đội tuyển bóng đá Việt Nam và đội khách quốc tế diễn ra tại sân vận động Hàng Đẫy (Hà Nội). Ban Tổ chức đã chuẩn bị một khán đài danh dự trang trọng có rèm che và ghế nệm êm ái dành cho Bác. Nhưng khi đến sân, Bác mỉm cười nói: 'Bác đến xem bóng đá cùng đồng bào, các chú cứ để Bác ngồi chung với bà con cho vui'. Bác bước lên khán đài xi măng bình thường, ngồi lẫn giữa các chiến sĩ và đồng bào Thủ đô. Người vỗ tay tán thưởng mỗi pha bóng đẹp, hỏi han chuyện học tập của các em thiếu nhi ngồi cạnh. Cả sân vận động vỡ òa trong niềm xúc động tột cùng trước hình ảnh vị Chủ tịch nước giản dị, gần gũi như người Cha hòa mình vào ngày hội thể thao của nhân dân.",
+    lesson_or_quote:
+      "Phong cách sống hòa mình cùng nhân dân: Người lãnh tụ vĩ đại không bao giờ tự tách mình khỏi quần chúng cần lao.",
+    image_url: "/images/archive/21-bac-ho-xem-bong-da-1958.jpg",
+    source_name: "Thông tấn xã Việt Nam & Bảo tàng Lịch sử Quốc gia",
+    source_url: "https://vnanet.vn",
+    verified: true,
+  },
+  {
+    date_label: "Thập niên 1950 - 1960",
+    year: 1955,
+    period: "1954 - 1969",
+    title: "Tấm lòng bao la của Bác: 'Ai yêu nhi đồng bằng Bác Hồ Chí Minh'",
+    summary:
+      "Trong suốt cuộc đời hoạt động cách mạng, Bác Hồ luôn dành tình cảm yêu thương đặc biệt nhất cho các cháu thiếu niên, nhi đồng. Mỗi dịp Tết Trung thu hay Quốc tế Thiếu nhi, Bác đều tự tay viết thư và chuẩn bị kẹo gửi tặng các cháu.",
+    full_story:
+      "Khuôn viên Phủ Chủ tịch những ngày rằm Trung thu hay Quốc tế Thiếu nhi 1/6 luôn tràn ngập tiếng cười giòn giã của các cháu thiếu nhi được vào thăm Bác Hồ. Bác đón các cháu từ ngoài cổng, dắt tay từng cháu nhỏ, ân cần chia từng chiếc kẹo, quả cam. Bác hỏi han từng cháu: 'Các cháu học có ngoan không? Có giúp đỡ cha mẹ không?'. Người căn dặn: 'Tuổi nhỏ làm việc nhỏ, tùy theo sức của mình'. Năm điều Bác Hồ dạy thiếu niên nhi đồng: 'Yêu Tổ quốc, yêu đồng bào; Học tập tốt, lao động tốt; Đoàn kết tốt, kỷ luật tốt; Giữ gìn vệ sinh thật tốt; Khiêm tốn, thật thà, dũng cảm' đã trở thành kim chỉ nam rèn luyện nhân cách cho biết bao thế hệ tuổi thơ Việt Nam khôn lớn trưởng thành.",
+    lesson_or_quote:
+      "'Trẻ em như búp trên cành / Biết ăn ngủ, biết học hành là ngoan' - Tình yêu thương vô bờ bến dành cho thế hệ tương lai của Tổ quốc.",
+    image_url: "/images/archive/22-bac-ho-voi-thieu-nhi.jpg",
+    source_name: "Bảo tàng Hồ Chí Minh & Báo Thiếu niên Tiền phong",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
     date_label: "Đêm giao thừa Tết Nhâm Dần 1962",
     year: 1962,
     period: "1954 - 1969",
@@ -384,22 +580,6 @@ export const verifiedStories: IStoryMilestone[] = [
     image_url: "/images/archive/nha-san-bac-ho.jpg",
     source_name: "Khu di tích Phủ Chủ tịch & Báo Nhân Dân",
     source_url: "https://ditichhochiminhphuchutich.gov.vn",
-    verified: true,
-  },
-  {
-    date_label: "Tháng 6 năm 1957",
-    year: 1957,
-    period: "1954 - 1969",
-    title: "Hàng rào dâm bụt đỏ và giếng nước làng Sen",
-    summary:
-      "Sau 50 năm xa cách quê hương, ngày 16/6/1957, Chủ tịch Hồ Chí Minh về thăm lại quê nhà Kim Liên (Nam Đàn, Nghệ An). Người bồi hồi nhận ra từng gốc cây, hàng rào dâm bụt xưa và chiếc cổng tre bình dị của tuổi thơ.",
-    full_story:
-      "Rời quê từ năm 1906, mãi đến ngày 16/6/1957, sau 50 năm bôn ba khắp bốn biển năm châu và lãnh đạo cách mạng thắng lợi, Bác Hồ mới có dịp trở về thăm lại làng Sen quê nội và làng Hoàng Trù quê ngoại. Khi đoàn cán bộ địa phương hướng dẫn Bác đi theo con đường mới rải đá sạch sẽ, Bác xua tay cười hiền từ: 'Đường cũ làng ta đâu, Bác cháu ta cứ đi đường cũ'. Bác đi nhanh về phía ngôi nhà tranh thuở ấu thơ. Đến cổng, Người dừng lại chỉ vào hàng rào dâm bụt nở hoa đỏ thắm và hỏi: 'Hàng rào dâm bụt ngày xưa mẹ Bác trồng vẫn còn đây phải không các chú?'. Bước vào nhà, Người nhìn chiếc phản gỗ, chiếc khung cửi thân quen của mẹ Hoàng Thị Loan, mắt rưng rưng xúc động. Người nói chuyện thân mật với bà con xóm làng bằng giọng Nghệ ấm áp, căn dặn đồng bào đoàn kết, thi đua sản xuất, giữ gìn đạo đức và nếp sống quê hương nghĩa tình.",
-    lesson_or_quote:
-      "Dù ở cương vị tối cao của nguyên thủ quốc gia, Bác vẫn nguyên vẹn một tấm lòng thủy chung son sắt và tình cảm sâu nặng với quê hương nguồn cội.",
-    image_url: "/images/archive/portrait-1946.jpg",
-    source_name: "Khu di tích Quốc gia đặc biệt Kim Liên & Bảo tàng Hồ Chí Minh",
-    source_url: "https://baotanghochiminh.vn",
     verified: true,
   },
   {
@@ -423,6 +603,24 @@ export const verifiedStories: IStoryMilestone[] = [
 export const verifiedResistance: IResistanceHistory[] = [
   {
     war_period: "chong-phap",
+    date_label: "Tháng 8 năm 1945",
+    year: 1945,
+    event_title: "Quốc dân Đại hội Tân Trào & Hợp tác Đồng minh chống Phát xít",
+    campaign_or_context:
+      "Tại căn cứ Tân Trào (Tuyên Quang), Chủ tịch Hồ Chí Minh cùng Trung ương Đảng triệu tập Quốc dân Đại hội, phát động Tổng khởi nghĩa giành chính quyền và hợp tác với phái bộ Đồng minh OSS Deer Team (Mỹ).",
+    ho_chi_minh_role:
+      "Người được bầu làm Chủ tịch Ủy ban Dân tộc Giải phóng Việt Nam; ra chỉ thị lịch sử: 'Dù phải đốt cháy cả dãy Trường Sơn cũng phải kiên quyết giành cho được độc lập!'.",
+    authentic_quote:
+      "'Giờ quyết định cho vận mệnh dân tộc ta đã đến. Toàn quốc đồng bào hãy đứng dậy đem sức ta mà tự giải phóng cho ta!'",
+    outcome:
+      "Cách mạng Tháng Tám toàn thắng rực rỡ trên cả nước chỉ trong vòng 15 ngày, lật đổ ách thống trị phát xít và phong kiến.",
+    image_url: "/images/archive/15-bac-ho-va-doi-oss-deer-team-1945.jpg",
+    source_name: "Cơ quan Lưu trữ Quốc gia Hoa Kỳ (NARA) & Bảo tàng Lịch sử Quốc gia",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    war_period: "chong-phap",
     date_label: "Ngày 2 tháng 9 năm 1945",
     year: 1945,
     event_title: "Tuyên ngôn Độc lập — Khai sinh nước Việt Nam Dân chủ Cộng hòa",
@@ -434,9 +632,45 @@ export const verifiedResistance: IResistanceHistory[] = [
       "'Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thật đã thành một nước tự do, độc lập. Toàn thể dân tộc Việt Nam quyết đem tất cả tinh thần và lực lượng, tính mạng và của cải để giữ vững quyền tự do, độc lập ấy!'",
     outcome:
       "Chấm dứt hoàn toàn ách thống trị hơn 80 năm của thực dân Pháp và hàng nghìn năm của chế độ phong kiến, mở ra kỷ nguyên mới: Kỷ nguyên độc lập, tự do cho Tổ quốc.",
-    image_url: "/images/archive/portrait-1946.jpg",
-    source_name: "Bảo tàng Lịch sử Quốc gia & Cổng TTĐT Đảng Cộng sản Việt Nam",
-    source_url: "https://tulieuvankien.dangcongsan.vn",
+    image_url: "/images/archive/16-quan-chung-ba-dinh-2-9-1945.jpg",
+    source_name: "Trung tâm Lưu trữ Quốc gia III & Thông tấn xã Việt Nam",
+    source_url: "https://vnanet.vn",
+    verified: true,
+  },
+  {
+    war_period: "chong-phap",
+    date_label: "Ngày 6 tháng 3 năm 1946",
+    year: 1946,
+    event_title: "Ký kết Hiệp định Sơ bộ 6/3/1946 tại Hà Nội — Quyết sách 'Hòa để tiến'",
+    campaign_or_context:
+      "Đất nước đứng trước thế 'ngàn cân treo sợi tóc': 20 vạn quân Tưởng tràn vào miền Bắc, thực dân Pháp nổ súng đánh chiếm Nam Bộ. Chủ tịch Hồ Chí Minh chủ trương đàm phán ký Hiệp định Sơ bộ.",
+    ho_chi_minh_role:
+      "Người trực tiếp đàm phán và ký kết với Jean Sainteny tại số 38 Lý Thái Tổ (Hà Nội), chấp nhận nhượng bộ có nguyên tắc để đẩy quân Tưởng về nước, tránh đối đầu quân sự cùng lúc hai kẻ thù lớn.",
+    authentic_quote:
+      "'Chúng ta hòa với Pháp để gạt 20 vạn quân Tưởng ra khỏi biên cương, chuẩn bị lực lượng cho cuộc chiến đấu lâu dài mà ta tin chắc sẽ thắng lợi.'",
+    outcome:
+      "Gạt được 20 vạn quân Tưởng khỏi miền Bắc, kéo dài thời gian hòa bình để củng cố chính quyền, xây dựng lực lượng vũ trang và chuẩn bị lương thảo toàn quốc.",
+    image_url: "/images/archive/18-hiep-dinh-so-bo-6-3-1946.jpg",
+    source_name: "Trung tâm Lưu trữ Quốc gia III & Báo Cứu Quốc",
+    source_url: "https://baotanghochiminh.vn",
+    verified: true,
+  },
+  {
+    war_period: "chong-phap",
+    date_label: "Ngày 14 tháng 9 năm 1946",
+    year: 1946,
+    event_title: "Chủ tịch Hồ Chí Minh ký Tạm ước Việt - Pháp tại Paris",
+    campaign_or_context:
+      "Hội nghị Fontainebleau thất bại do lập trường xâm lược ngoan cố của phe thực dân Pháp. Để cứu vãn hòa bình và tạo thêm thời gian quý báu cho đất nước chuẩn bị kháng chiến, Người ký bản Tạm ước 14/9 với Marius Moutet.",
+    ho_chi_minh_role:
+      "Người dũng cảm gánh vác trách nhiệm lịch sử, dùng sách lược ngoại giao tài tình tranh thủ thêm từng ngày, từng tháng hòa bình chuẩn bị cho toàn dân kháng chiến.",
+    authentic_quote:
+      "'Tôi vừa ký một hiệp định tạm thời. Ký bản này là đau lòng, nhưng không ký thì chiến tranh bùng nổ ngay, mà ta cần thêm thời gian để chuẩn bị.'",
+    outcome:
+      "Giúp nhân dân ta có thêm hơn 3 tháng hòa bình quý giá để di chuyển máy móc lên chiến khu, tích trữ lương thực, củng cố thế trận chiến tranh nhân dân.",
+    image_url: "/images/archive/19-tam-uoc-viet-phap-paris-1946.jpg",
+    source_name: "Bảo tàng Lịch sử Quốc gia & Trung tâm Lưu trữ Quốc gia",
+    source_url: "https://baotanghochiminh.vn",
     verified: true,
   },
   {
@@ -451,7 +685,7 @@ export const verifiedResistance: IResistanceHistory[] = [
     authentic_quote:
       "'Chúng ta muốn hòa bình, chúng ta phải nhân nhượng. Nhưng chúng ta càng nhân nhượng, thực dân Pháp càng lấn tới, vì chúng quyết tâm cướp nước ta lần nữa! Không! Chúng ta thà hy sinh tất cả, chứ nhất định không chịu mất nước, nhất định không chịu làm nô lệ.'",
     outcome:
-      "Toàn thể nhân dân cả nước nhất tề đứng lên kháng chiến; quân dân Thủ đô cầm chân địch 60 ngày đêm giam chân địch trong thành phố để các cơ quan đầu não an toàn rút lên chiến khu.",
+      "Toàn thể nhân dân cả nước nhất tề đứng lên kháng chiến; quân dân Thủ đô giam chân địch 60 ngày đêm trong thành phố để các cơ quan đầu não an toàn rút lên chiến khu Việt Bắc.",
     image_url: "/images/archive/portrait-1946.jpg",
     source_name: "Bộ sách Hồ Chí Minh Toàn tập (Tập 4, NXB Chính trị quốc gia Sự thật)",
     source_url: "https://tulieuvankien.dangcongsan.vn",
@@ -470,7 +704,7 @@ export const verifiedResistance: IResistanceHistory[] = [
       "'Mỗi người dân là một chiến sĩ, mỗi làng xóm là một pháo đài. Địch đánh nhanh thắng nhanh thì ta đánh lâu dài, lấy nhỏ thắng lớn, lấy yếu thắng mạnh.'",
     outcome:
       "Bẻ gãy hoàn toàn gọng kìm tấn công của quân Pháp, làm phá sản chiến lược 'đánh nhanh thắng nhanh', bảo toàn nguyên vẹn căn cứ địa kháng chiến đầu não.",
-    image_url: "/images/archive/ho-chi-minh-1950s.jpg",
+    image_url: "/images/archive/14-cay-da-lich-su-tan-trao.jpg",
     source_name: "Bảo tàng Lịch sử Quân sự Việt Nam",
     source_url: "https://baotanghochiminh.vn",
     verified: true,
@@ -497,16 +731,16 @@ export const verifiedResistance: IResistanceHistory[] = [
     war_period: "chong-phap",
     date_label: "Tháng 2 năm 1951",
     year: 1951,
-    event_title: "Đại hội đại biểu toàn quốc lần thứ II của Đảng",
+    event_title: "Đại hội đại biểu toàn quốc lần thứ II của Đảng tại Chiêm Hóa",
     campaign_or_context:
-      "Họp tại xã Vinh Quang (nay là xã Chiêm Hóa, tỉnh Tuyên Quang), đưa Đảng ra hoạt động công khai lấy tên là Đảng Lao động Việt Nam.",
+      "Họp tại xã Vinh Quang (nay là huyện Chiêm Hóa, tỉnh Tuyên Quang), đưa Đảng ra hoạt động công khai lấy tên là Đảng Lao động Việt Nam.",
     ho_chi_minh_role:
       "Người đọc Báo cáo Chính trị tổng kết toàn diện kinh nghiệm cách mạng Việt Nam, vạch ra phương hướng đưa cuộc kháng chiến đến toàn thắng.",
     authentic_quote:
       "'Đảng Lao động Việt Nam phải là một Đảng to lớn, mạnh mẽ, chắc chắn, trong sạch, cách mạng triệt để. Đảng ta phải là đạo quân tiên phong của giai cấp công nhân và của toàn dân tộc.'",
     outcome:
       "Tăng cường sức mạnh lãnh đạo của Đảng cầm quyền, củng cố khối đại đoàn kết toàn dân tộc, tạo đòn bẩy quyết định cho thắng lợi quân sự sau đó.",
-    image_url: "/images/archive/ho-chi-minh-1950s.jpg",
+    image_url: "/images/archive/13-dinh-tan-trao-tuyen-quang.jpg",
     source_name: "Cổng Thông tin điện tử Đảng Cộng sản Việt Nam",
     source_url: "https://tulieuvankien.dangcongsan.vn",
     verified: true,
@@ -535,7 +769,7 @@ export const verifiedResistance: IResistanceHistory[] = [
     year: 1959,
     event_title: "Nghị quyết Hội nghị Trung ương 15 (khóa II)",
     campaign_or_context:
-      "Đế quốc Mỹ và chính quyền Ngô Đình Diệm ban hành Luật 10/59 lê máy chém khắp miền Nam, dìm phong trào cách mạng trong biển máu.",
+      "Đế quốc Mỹ và chính quyền tay sai ban hành Luật 10/59 lê máy chém khắp miền Nam, dìm phong trào yêu nước trong biển máu.",
     ho_chi_minh_role:
       "Chủ tịch Hồ Chí Minh chủ trì Hội nghị Trung ương 15, xác định con đường giải phóng miền Nam là con đường cách mạng bạo lực vũ trang kết hợp chính trị.",
     authentic_quote:
@@ -560,7 +794,7 @@ export const verifiedResistance: IResistanceHistory[] = [
       "'Đại hội lần này là Đại hội xây dựng Chủ nghĩa xã hội ở miền Bắc và đấu tranh hòa bình thống nhất nước nhà. Toàn Đảng, toàn dân ta đoàn kết một lòng, nhất định thắng lợi!'",
     outcome:
       "Xác lập đường lối chiến lược cách mạng song song, biến miền Bắc thành căn cứ địa vững chắc chi viện sức người sức của cho tiền tuyến miền Nam.",
-    image_url: "/images/archive/portrait-1946.jpg",
+    image_url: "/images/archive/ho-chi-minh-1950s.jpg",
     source_name: "Cổng Thông tin điện tử Đảng Cộng sản Việt Nam",
     source_url: "https://tulieuvankien.dangcongsan.vn",
     verified: true,
@@ -578,8 +812,8 @@ export const verifiedResistance: IResistanceHistory[] = [
       "'Chiến tranh có thể kéo dài 5 năm, 10 năm, 20 năm hoặc lâu hơn nữa. Hà Nội, Hải Phòng và một số thành phố, xí nghiệp có thể bị tàn phá, song nhân dân Việt Nam quyết không sợ! Không có gì quý hơn độc lập, tự do!'",
     outcome:
       "Khẩu hiệu 'Không có gì quý hơn độc lập, tự do' trở thành động lực tinh thần vô địch, thúc giục hàng triệu thanh niên xẻ dọc Trường Sơn đi cứu nước.",
-    image_url: "/images/archive/nha-san-bac-ho.jpg",
-    source_name: "Bộ sách Hồ Chí Minh Toàn tập (Tập 15, NXB Chính trị quốc gia Sự thật)",
+    image_url: "/images/archive/trang-su-moi-1945.jpg",
+    source_name: "Hồ Chí Minh Toàn tập (Tập 15, NXB Chính trị quốc gia Sự thật)",
     source_url: "https://tulieuvankien.dangcongsan.vn",
     verified: true,
   },
@@ -589,33 +823,33 @@ export const verifiedResistance: IResistanceHistory[] = [
     year: 1968,
     event_title: "Cuộc Tổng tiến công và nổi dậy Tết Mậu Thân 1968",
     campaign_or_context:
-      "Đòn tiến công chiến lược bất ngờ đồng loạt giáng vào sào huyệt của Mỹ - chính quyền Sài Gòn tại các đô thị trên toàn miền Nam vào đêm Giao thừa Tết Mậu Thân.",
+      "Đòn tập kích chiến lược bất ngờ đồng loạt vào các sào huyệt đầu não của Mỹ và chính quyền Sài Gòn tại các đô thị miền Nam trong đêm giao thừa Tết Mậu Thân.",
     ho_chi_minh_role:
-      "Bác Hồ gửi bài thơ chúc Tết bất hủ phát qua làn sóng Đài Tiếng nói Việt Nam làm hiệu lệnh mở màn cuộc tổng tiến công trên toàn chiến trường miền Nam.",
+      "Chủ tịch Hồ Chí Minh gửi Thơ chúc Tết xuân 1968 làm hiệu lệnh xuất quân rung chuyển non sông: 'Xuân này hơn hẳn mấy xuân qua / Thắng trận tin vui khắp nước nhà / Nam Bắc thi đua đánh giặc Mỹ / Tiến lên! Toàn thắng ắt về ta!'.",
     authentic_quote:
-      "'Xuân này hơn hẳn mấy xuân qua / Thắng trận tin vui khắp nước nhà / Nam Bắc thi đua đánh giặc Mỹ / Tiến lên! Toàn thắng ắt về ta!'",
+      "'Tiến lên! Toàn thắng ắt về ta!' — Bài thơ chúc Tết lịch sử thôi thúc cả tiền tuyến anh dũng xông pha.",
     outcome:
-      "Làm phá sản hoàn toàn chiến lược 'Chiến tranh cục bộ' của Mỹ, làm lung lay ý chí xâm lược của giới cầm quyền Washington, buộc Mỹ phải tuyên bố phi Mỹ hóa chiến tranh và ngồi vào bàn đàm phán Paris.",
-    image_url: "/images/archive/portrait-1946.jpg",
-    source_name: "Báo Nhân Dân & Thông tấn xã Việt Nam",
+      "Làm lung lay tận gốc ý chí xâm lược của giới cầm quyền Washington, buộc Mỹ phải đơn phương ngừng ném bom miền Bắc từ vĩ tuyến 20 trở ra và chấp nhận ngồi vào bàn đàm phán Paris.",
+    image_url: "/images/archive/ho-chi-minh-vo-nguyen-giap-1945.jpg",
+    source_name: "Bảo tàng Lịch sử Quân sự Việt Nam & Báo Nhân Dân",
     source_url: "https://nhandan.vn",
     verified: true,
   },
   {
     war_period: "chong-my",
-    date_label: "10/5/1965 — 10/5/1969",
+    date_label: "Năm 1969",
     year: 1969,
-    event_title: "Bản Di chúc lịch sử của Chủ tịch Hồ Chí Minh",
+    event_title: "Bản Di chúc lịch sử thiêng liêng",
     campaign_or_context:
-      "Suốt 4 năm (1965-1969), cứ vào dịp sinh nhật tháng 5, Bác Hồ lại dành trọn thời gian suy ngẫm và từng nét bút hoàn thiện bản Di chúc thiêng liêng để lại cho muôn đời sau.",
+      "Những năm tháng cuối đời tại Nhà sàn Phủ Chủ tịch, Người dành trọn tâm huyết, tình cảm và trí tuệ viết bản Di chúc để lại cho toàn Đảng, toàn quân và toàn dân ta.",
     ho_chi_minh_role:
-      "Tác giả bản Di chúc - văn kiện vô giá kết tinh tư tưởng, đạo đức, phong cách và tình thương bao la của một vĩ nhân trọn đời cống hiến cho Tổ quốc và nhân loại.",
+      "Người căn dặn toàn diện về xây dựng, chỉnh đốn Đảng, bồi dưỡng thế hệ cách mạng cho đời sau, kế hoạch hàn gắn vết thương chiến tranh và niềm tin tất thắng vào ngày non sông thu về một mối.",
     authentic_quote:
-      "'Cuộc chống Mỹ, cứu nước của nhân dân ta dù phải kinh qua gian khổ, hy sinh nhiều hơn nữa, song nhất định thắng lợi hoàn toàn. Đó là một điều chắc chắn... Điều mong muốn cuối cùng của tôi là: Toàn Đảng, toàn dân ta đoàn kết phấn đấu, xây dựng một nước Việt Nam hòa bình, thống nhất, độc lập, dân chủ và giàu mạnh, và góp phần xứng đáng vào sự nghiệp cách mạng thế giới.'",
+      "'Cuộc chống Mỹ, cứu nước của nhân dân ta dù phải kinh qua gian khổ, hy sinh nhiều hơn nữa, song nhất định thắng lợi hoàn toàn. Đó là một điều chắc chắn... Điều mong muốn cuối cùng của tôi là: Toàn Đảng, toàn dân ta đoàn kết phấn đấu, xây dựng một nước Việt Nam hòa bình, thống nhất, độc lập, dân chủ và giàu mạnh.'",
     outcome:
-      "Trở thành kim chỉ nam soi đường, ngọn cờ đoàn kết toàn dân tộc quyết tâm đánh cho Mỹ cút, đánh cho Ngụy nhào và xây dựng đất nước đàng hoàng hơn, to đẹp hơn.",
+      "Trở thành cương lĩnh hành động, di sản tinh thần bất hủ dẫn dắt toàn dân tộc hoàn thành trọn vẹn sự nghiệp giải phóng miền Nam, thống nhất đất nước.",
     image_url: "/images/archive/nha-san-bac-ho.jpg",
-    source_name: "Khu di tích Chủ tịch Hồ Chí Minh tại Phủ Chủ tịch & Báo Nhân Dân",
+    source_name: "Bản chụp bút tích Di chúc tại Khu di tích Phủ Chủ tịch",
     source_url: "https://ditichhochiminhphuchutich.gov.vn",
     verified: true,
   },
@@ -625,15 +859,15 @@ export const verifiedResistance: IResistanceHistory[] = [
     year: 1975,
     event_title: "Chiến dịch Hồ Chí Minh lịch sử — Toàn thắng giải phóng miền Nam",
     campaign_or_context:
-      "Chiến dịch giải phóng Sài Gòn - Gia Định mang tên Chủ tịch Hồ Chí Minh vĩ đại, kết thúc vẻ vang cuộc kháng chiến chống Mỹ cứu nước trường kỳ 21 năm.",
+      "Chiến dịch tiến công chiến lược quyết định mang tên Chủ tịch Hồ Chí Minh vĩ đại, giải phóng hoàn toàn thành phố Sài Gòn - Gia Định và toàn bộ miền Nam.",
     ho_chi_minh_role:
-      "Dù Bác đã đi xa, tư tưởng quân sự, lời dạy và ý chí giải phóng miền Nam của Người đã dẫn dắt toàn quân, toàn dân tiến tới ngày toàn thắng.",
+      "Tư tưởng và ước nguyện cháy bỏng của Bác: 'Bắc Nam sum họp một nhà' đã trở thành ngọn cờ dẫn dắt đoàn quân bách chiến bách thắng tiến vào Dinh Độc Lập.",
     authentic_quote:
-      "'Dù khó khăn gian khổ đến mấy, nhân dân ta nhất định sẽ hoàn toàn thắng lợi. Đế quốc Mỹ nhất định phải cút khỏi nước ta. Tổ quốc ta nhất định sẽ thống nhất. Đồng bào Nam Bắc nhất định sẽ sum họp một nhà.' (Di chúc Bác Hồ)",
+      "'Nước Việt Nam là một, dân tộc Việt Nam là một. Sông có thể cạn, núi có thể mòn, song chân lý ấy không bao giờ thay đổi!'",
     outcome:
-      "Lá cờ Mặt trận Dân tộc Giải phóng miền Nam Việt Nam tung bay trên nóc Dinh Độc Lập vào 11 giờ 30 phút ngày 30/4/1975; giải phóng hoàn toàn miền Nam, thống nhất non sông đất nước.",
-    image_url: "/images/archive/trang-su-moi-1945.jpg",
-    source_name: "Thông tấn xã Việt Nam & Bảo tàng Lịch sử Quân sự Việt Nam",
+      "Giải phóng hoàn toàn miền Nam, non sông thu về một mối; thực hiện trọn vẹn Di chúc thiêng liêng của Bác Hồ kính yêu.",
+    image_url: "/images/archive/ba-dinh-1945.jpg",
+    source_name: "Thông tấn xã Việt Nam & Bộ Quốc phòng Việt Nam",
     source_url: "https://vnanet.vn",
     verified: true,
   },

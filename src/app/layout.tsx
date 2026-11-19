@@ -29,9 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className={`${playfair.variable} ${beVietnamPro.variable} scroll-smooth`}>
+      <head>
+        <link rel="stylesheet" href="/assets/chatbot/chatbot-widget.css" />
+      </head>
       <body className="bg-[#12100E] text-[#EDE8DF] antialiased selection:bg-[#8B1E19] selection:text-[#FAF6F0]">
         <LenisScroll />
         {children}
+        <script src="/assets/chatbot/chatbot-widget.js" defer></script>
       </body>
     </html>
   );
